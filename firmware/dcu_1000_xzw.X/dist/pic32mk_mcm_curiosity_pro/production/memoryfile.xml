@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<project>                                  
+  <executable name="dist/pic32mk_mcm_curiosity_pro/production/dcu_1000_xzw.X.production.elf">                 
+    <memory name="program">                 
+      <units>bytes</units>                 
+      <length>1049728</length>                 
+      <used>80088</used>                     
+      <free>969640</free>                     
+    </memory>                              
+    <memory name="data">              
+      <units>bytes</units>                 
+      <length>262144</length>                 
+      <used>3673</used>                     
+      <free>258471</free>                     
+    </memory>                              
+  </executable>                            
+</project>                                 
