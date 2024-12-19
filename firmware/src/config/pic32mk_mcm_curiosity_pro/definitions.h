@@ -70,7 +70,7 @@
 
 
 #include "peripheral/eeprom/plib_eeprom.h"
-#include "F:\RJ\mk\dcu 1000\ocmp_compare_mode\firmware\src\config\pic32mk_mcm_curiosity_pro\peripheral\wdt\plib_wdt.h"
+#include "peripheral\wdt\plib_wdt.h"
 #include "vofa.h"
 #include "mpu6050.h"
 

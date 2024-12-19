@@ -31,7 +31,7 @@ build/pic32mk_mcm_curiosity_pro/production/_ext/1224054987/plib_adchs.o: \
  ../src/config/pic32mk_mcm_curiosity_pro/peripheral/cdac/plib_cdac2.h \
  ../src/config/pic32mk_mcm_curiosity_pro/peripheral/cdac/plib_cdac3.h \
  ../src/config/pic32mk_mcm_curiosity_pro/peripheral/eeprom/plib_eeprom.h \
- F:\RJ\mk\dcu\ 1000\ocmp_compare_mode\firmware\src\config\pic32mk_mcm_curiosity_pro\peripheral\wdt\plib_wdt.h \
+ ../src/config/pic32mk_mcm_curiosity_pro/peripheral\wdt\plib_wdt.h \
  ../vofa/vofa.h ../mpu6050/mpu6050.h ../MotorControl/FOC_Control.h \
  ../MotorControl/Coordinate_transform.h ../MotorControl/Motor.h \
  ../MotorControl/PI_Cale.h ../MotorControl/FOC_Control.h \
@@ -99,7 +99,7 @@ build/pic32mk_mcm_curiosity_pro/production/_ext/1224054987/plib_adchs.o: \
 
 ../src/config/pic32mk_mcm_curiosity_pro/peripheral/eeprom/plib_eeprom.h:
 
-F:\RJ\mk\dcu\ 1000\ocmp_compare_mode\firmware\src\config\pic32mk_mcm_curiosity_pro\peripheral\wdt\plib_wdt.h:
+../src/config/pic32mk_mcm_curiosity_pro/peripheral\wdt\plib_wdt.h:
 
 ../vofa/vofa.h:
 

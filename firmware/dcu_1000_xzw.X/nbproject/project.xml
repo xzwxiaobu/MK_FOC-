@@ -17,6 +17,8 @@
                 <sourceRootElem>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/vofa</sourceRootElem>
                 <sourceRootElem>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/mpu6050</sourceRootElem>
                 <sourceRootElem>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/MotorControl</sourceRootElem>
+                <sourceRootElem>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/MotorControl</sourceRootElem>
+                <sourceRootElem>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/vofa</sourceRootElem>
             </sourceRootList>
             <confList>
                 <confElem>

@@ -124,12 +124,16 @@
         <logicalFolder name="MotorControl"
                        displayName="MotorControl"
                        projectFiles="true">
-          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/MotorControl/SVPWM.c</itemPath>
-          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/MotorControl/Coordinate_transform.c</itemPath>
-          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/MotorControl/FOC_Control.c</itemPath>
-          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/MotorControl/Motor.c</itemPath>
-          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/MotorControl/PI_Cale.c</itemPath>
-          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/src/Speed_Enconder_HALLCAL.c</itemPath>
+          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/MotorControl/Coordinate_transform.c</itemPath>
+          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/MotorControl/Coordinate_transform.h</itemPath>
+          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/MotorControl/FOC_Control.c</itemPath>
+          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/MotorControl/FOC_Control.h</itemPath>
+          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/MotorControl/Motor.c</itemPath>
+          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/MotorControl/Motor.h</itemPath>
+          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/MotorControl/PI_Cale.c</itemPath>
+          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/MotorControl/PI_Cale.h</itemPath>
+          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/MotorControl/SVPWM.c</itemPath>
+          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/MotorControl/SVPWM.h</itemPath>
         </logicalFolder>
         <logicalFolder name="f1"
                        displayName="pic32mk_mcm_curiosity_pro"
@@ -146,7 +150,7 @@
               <itemPath>../src/config/pic32mk_mcm_curiosity_pro/peripheral/clk/plib_clk.c</itemPath>
             </logicalFolder>
             <logicalFolder name="eeprom" displayName="eeprom" projectFiles="true">
-              <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/src/config/pic32mk_mcm_curiosity_pro/peripheral/eeprom/plib_eeprom.c</itemPath>
+              <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/src/config/pic32mk_mcm_curiosity_pro/peripheral/eeprom/plib_eeprom.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f2" displayName="evic" projectFiles="true">
               <itemPath>../src/config/pic32mk_mcm_curiosity_pro/peripheral/evic/plib_evic.c</itemPath>
@@ -183,8 +187,8 @@
               <itemPath>../src/config/pic32mk_mcm_curiosity_pro/peripheral/uart/plib_uart6.c</itemPath>
             </logicalFolder>
             <logicalFolder name="f10" displayName="wdt" projectFiles="true">
-              <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/src/config/pic32mk_mcm_curiosity_pro/peripheral/wdt/plib_wdt.c</itemPath>
-              <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/src/config/pic32mk_mcm_curiosity_pro/peripheral/wdt/plib_wdt.h</itemPath>
+              <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/src/config/pic32mk_mcm_curiosity_pro/peripheral/wdt/plib_wdt.c</itemPath>
+              <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/src/config/pic32mk_mcm_curiosity_pro/peripheral/wdt/plib_wdt.h</itemPath>
             </logicalFolder>
           </logicalFolder>
           <logicalFolder name="f2" displayName="stdio" projectFiles="true">
@@ -197,9 +201,9 @@
         <logicalFolder name="f2" displayName="Sixstepcontrol" projectFiles="true">
           <itemPath>../src/newfile.c</itemPath>
         </logicalFolder>
-        <logicalFolder name="f3" displayName="vofa_xzw" projectFiles="true">
-          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/vofa/vofa.c</itemPath>
-          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/vofa/vofa.h</itemPath>
+        <logicalFolder name="vofa" displayName="vofa" projectFiles="true">
+          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/vofa/vofa.c</itemPath>
+          <itemPath>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/vofa/vofa.h</itemPath>
         </logicalFolder>
       </logicalFolder>
       <itemPath>../src/main.c</itemPath>
@@ -210,6 +214,8 @@
     <Elem>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/vofa</Elem>
     <Elem>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/mpu6050</Elem>
     <Elem>F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/MotorControl</Elem>
+    <Elem>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/MotorControl</Elem>
+    <Elem>F:/RJ/mk/dcu 1000/ocmp_compare_mode/dcu1000/firmware/vofa</Elem>
   </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -460,7 +466,6 @@
         <property key="SPI/I2S 4" value="true"/>
         <property key="SPI/I2S 5" value="true"/>
         <property key="SPI/I2S 6" value="true"/>
-        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
         <property key="TIMER1" value="true"/>
         <property key="TIMER2" value="true"/>
         <property key="TIMER3" value="true"/>
@@ -483,6 +488,8 @@
         <property key="UART5" value="true"/>
         <property key="UART6" value="true"/>
         <property key="communication.interface.jtag" value="2wire"/>
+        <property key="debugoptions.debug-startup" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
@@ -499,7 +506,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d0fffff"/>
-        <property key="poweroptions.powerenable" value="false"/>
+        <property key="poweroptions.powerenable" value="true"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>
@@ -524,8 +531,9 @@
                   value="toolpack.updateoptions.uselatestoolpack"/>
         <property key="toolpack.updateoptions.packversion"
                   value="Press to select which tool pack to use"/>
-        <property key="voltagevalue" value="3.25"/>
+        <property key="voltagevalue" value="3.3"/>
         <property key="冻结所有其他外设" value="true"/>
+        <property key="安全段。分部编程" value="FullChipProgramming"/>
       </ICD4Tool>
       <PICkit3PlatformTool>
         <property key="ADC 1" value="true"/>
@@ -1189,7 +1197,7 @@
         <property key="periphComp4.gte" value="gt"/>
         <property key="periphComp5.gte" value="gt"/>
         <property key="periphComp6.gte" value="gt"/>
-        <property key="poweroptions.powerenable" value="false"/>
+        <property key="poweroptions.powerenable" value="true"/>
         <property key="programmerToGoFilePath"
                   value="F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/pic32mk_mcm_curiosity_pro.X/debug/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_pro_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
@@ -1288,7 +1296,7 @@
         <property key="usartf1io.output" value="window"/>
         <property key="usartf1io.outputfile" value=""/>
         <property key="usartf1io.uartioenabled" value="false"/>
-        <property key="voltagevalue" value="3.25"/>
+        <property key="voltagevalue" value="3.3"/>
         <property key="warningmessagebreakoptions.W0001_CORE_BITREV_MODULO_EN"
                   value="report"/>
         <property key="warningmessagebreakoptions.W0002_CORE_SECURE_MEMORYACCESS"
