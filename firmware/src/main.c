@@ -248,7 +248,7 @@ int main ( void )
     MCPWM_ChannelPrimaryDutySet(MCPWM_CH_2, 0);         // b13  2L                B12  2h
     MCPWM_ChannelPrimaryDutySet(MCPWM_CH_3, 0);        //  B11  3L                b10  3H
     MCPWM_Start();
-
+     
 
     ADCHS_CallbackRegister(ADCHS_CH0, ADC_ResultHandler, (uintptr_t)NULL);    //A0
 //    ADCHS_CallbackRegister(ADCHS_CH1, ADC_ResultHandler1, (uintptr_t)NULL);   //A1
@@ -339,7 +339,7 @@ int main ( void )
         
         /*500ms   RB0作为主程序的 指示灯 指示主程序mainloop不卡死 */
         static volatile  uint32_t    ticOld;  
-        static volatile  uint32_t    tickNow;  
+        static volatile  uint32_t    tickNow;   static volatile int r_v,g_v, b_v ; 
         tickNow =  getSysTick(); 
         static volatile  bool    tickflag;
         if((int32_t)(tickNow - ticOld) >= 500)  		
@@ -348,14 +348,54 @@ int main ( void )
             tickflag=!tickflag ;
             GPIO_RB0_Toggle();
             temp_trans(ADC_Sample_F_Para.Temperature, &NTC_Temp);		
+            
+     
+                   
+        }  
+       
+        if(tickflag ==0)
+        {
+         g_v=0; r_v=0; b_v=0;
+        OCMP4_CompareSecondaryValueSet (r_v);     //Ra7       30000max
+        OCMP2_CompareSecondaryValueSet (g_v);     //RB1         600020
+        OCMP3_CompareSecondaryValueSet (b_v);     //Rd3
+         
+        }
+        else{
+                  
+            r_v=18750 ;
+            g_v=3750 ;
+            b_v=28152 ;
+            OCMP4_CompareSecondaryValueSet (r_v);     //Ra7       30000max
+            OCMP2_CompareSecondaryValueSet ( g_v);     //RB1         600020
+            OCMP3_CompareSecondaryValueSet (b_v);     //Rd3
+            
+//            if(r_v >30000)
+//            {
+//              r_v =0;
+//            }
+//              if(g_v >30000)
+//            {
+//              g_v =0;
+//
+//            } 
+//            if(b_v >30000)
+//            {
+//              b_v =0;
+//            } 
         
-        }    
+        
+        
+        
+        
+        }
+        
         
 //        if(tickflag!=0)
         {
             
-           CDAC2_DataWrite(adc_count0);
-           CDAC3_DataWrite(adc_count1);
+           CDAC2_DataWrite(2048-1);
+           CDAC3_DataWrite(1024-1);
 //                     CDAC3_DataWrite(4095);   //A8
 //                     CDAC2_DataWrite(2048);   //c10
             sample_number++;
@@ -416,7 +456,7 @@ int main ( void )
         if((int32_t)(tickNow2 - ticOld2) >= ictime)  	  //20k=50微秒   1ms 20次 
         { 	
             ticOld2 = tickNow2;	
-//            XzwVfGet(); //??????????
+            XzwVfGet(); //??????????
 
         }    
 

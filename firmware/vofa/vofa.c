@@ -89,7 +89,7 @@ void XzwVfGet( void)
         }
         
          num[1]=adc_count0  ; 
-         
+           num[2]=adc_count1  ; 
 //         num[2]=tanf(xxx); 
          num[3]=  xxx /(1+my_abs(xxx)) ;
          num[4]= Sat(xxx,1.0f) ;

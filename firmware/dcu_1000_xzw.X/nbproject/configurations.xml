@@ -466,6 +466,7 @@
         <property key="SPI/I2S 4" value="true"/>
         <property key="SPI/I2S 5" value="true"/>
         <property key="SPI/I2S 6" value="true"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
         <property key="TIMER1" value="true"/>
         <property key="TIMER2" value="true"/>
         <property key="TIMER3" value="true"/>
@@ -489,7 +490,7 @@
         <property key="UART6" value="true"/>
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
-        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Main"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="hwtoolclock.frcindebug" value="false"/>
@@ -533,7 +534,6 @@
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value="3.3"/>
         <property key="冻结所有其他外设" value="true"/>
-        <property key="安全段。分部编程" value="FullChipProgramming"/>
       </ICD4Tool>
       <PICkit3PlatformTool>
         <property key="ADC 1" value="true"/>
@@ -1160,7 +1160,7 @@
         <property key="communication.interface.jtag" value="2wire"/>
         <property key="communication.speed" value="${communication.speed.default}"/>
         <property key="debugoptions.debug-startup" value="Use system settings"/>
-        <property key="debugoptions.reset-behaviour" value="Use system settings"/>
+        <property key="debugoptions.reset-behaviour" value="Main"/>
         <property key="debugoptions.simultaneous.debug" value="false"/>
         <property key="debugoptions.useswbreakpoints" value="false"/>
         <property key="freeze.timers" value="false"/>
