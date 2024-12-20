@@ -230,10 +230,10 @@ int main ( void )
 //   QEI1_CallbackRegister(QEI1PeriodHandler, (uintptr_t)NULL) ;
      QEI1_Start()  ;    
   
-//    /* 输出 比较 time2   30000 最大值*/
-    OCMP4_CompareSecondaryValueSet (27000);     //Ra7       30000max
-    OCMP2_CompareSecondaryValueSet (6000);     //RB1         600020
-    OCMP3_CompareSecondaryValueSet (1800);     //Rd3
+//    /* 输出 比较 time2   30000 最大值 妖紫色：*/
+    OCMP4_CompareSecondaryValueSet (30000);     //Ra7       30000max
+    OCMP2_CompareSecondaryValueSet (30000);     //RB1         600020
+    OCMP3_CompareSecondaryValueSet (30000);     //Rd3
     
 //    ICAP3_Enable(); 
 //    ICAP4_Enable();
@@ -352,45 +352,7 @@ int main ( void )
      
                    
         }  
-       
-        if(tickflag ==0)
-        {
-         g_v=0; r_v=0; b_v=0;
-        OCMP4_CompareSecondaryValueSet (r_v);     //Ra7       30000max
-        OCMP2_CompareSecondaryValueSet (g_v);     //RB1         600020
-        OCMP3_CompareSecondaryValueSet (b_v);     //Rd3
-         
-        }
-        else{
-                  
-            r_v=18750 ;
-            g_v=3750 ;
-            b_v=28152 ;
-            OCMP4_CompareSecondaryValueSet (r_v);     //Ra7       30000max
-            OCMP2_CompareSecondaryValueSet ( g_v);     //RB1         600020
-            OCMP3_CompareSecondaryValueSet (b_v);     //Rd3
-            
-//            if(r_v >30000)
-//            {
-//              r_v =0;
-//            }
-//              if(g_v >30000)
-//            {
-//              g_v =0;
-//
-//            } 
-//            if(b_v >30000)
-//            {
-//              b_v =0;
-//            } 
-        
-        
-        
-        
-        
-        }
-        
-        
+      
 //        if(tickflag!=0)
         {
             
@@ -462,8 +424,10 @@ int main ( void )
 
        
            /* vofa+ 解析上位机数据*/
-//          XzwVfsend(); // 解析 vofa 上传的数据 
-          
+
+        {    
+              XzwVfsend(); // 解析 vofa 上传的数据 
+        }
           
         /* 使能 xzw  run   stop foc*/  
         GPIO_RC1_InputEnable();

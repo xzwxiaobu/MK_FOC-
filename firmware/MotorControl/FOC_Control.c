@@ -662,8 +662,8 @@ void Variable_Clear(void)
     Motor.speed_M_rpm = 0;							//电机机械角速度清零
     Motor.speed_E_rpm = 0;							//电机电角速度清零
     Motor.Control_Mode = 0;							//电机控制模式清零
-//	Motor.M_State = 0;									//电机状态置零
-//	Motor.E_theta = 0;									//电机电角度清零
+//	Motor.M_State = 0;								//电机状态置零
+//	Motor.E_theta = 0;								//电机电角度清零
 
     IF_Frq = 0;													//强拖频率计数清零
     

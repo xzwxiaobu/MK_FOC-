@@ -28,10 +28,11 @@ typedef union 		//??????????
 }FloatToChar;
 
 extern  FloatToChar fc;    
- 
+
+
 void XzwVfsend(void);
 void XzwVfGet(void);
-
+void  RGB_ledControl( int MODE) ;
 #ifdef	__cplusplus
 }
 #endif

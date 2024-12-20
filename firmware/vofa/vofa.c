@@ -6,6 +6,8 @@
 #include "FOC_Control.h"
 FloatToChar fc; 
 
+static volatile uint16_t Vred ,Vgreen,Vblue;
+static volatile int step;
 void XzwVfsend(void)
 {
      
@@ -17,13 +19,38 @@ void XzwVfsend(void)
               
               if((rxBuffer[0]==0x55)&&(rxBuffer[6]==0xaa))
               {
-                  if(rxBuffer[1]==0xa0)
-                  {
-                      Motor.M_State =fc.f_data ;   
-//                       GPIO_RA14_Toggle();
-                  }
-                               
-              
+                    if(rxBuffer[1]==0xa0)
+                    {
+                        Vred =(uint16_t)(fc.f_data) ;   
+                        OCMP4_CompareSecondaryValueSet (Vred);
+                    //                       GPIO_RA14_Toggle();
+                    }
+
+                     if(rxBuffer[1]==0xa1)
+                    {
+                        Vgreen =(uint16_t)(fc.f_data) ;   
+                        OCMP2_CompareSecondaryValueSet ( Vgreen); 
+                    //                       GPIO_RA14_Toggle();
+                    }
+
+                    if(rxBuffer[1]==0xa2)
+                   {
+                      Vblue =(uint16_t)(fc.f_data) ; 
+                      OCMP3_CompareSecondaryValueSet ( Vblue); 
+                   //                       GPIO_RA14_Toggle();
+                   }
+                    
+                    if(rxBuffer[1]==0xa3)
+                     {
+                        step=(int)(fc.f_data) ; 
+                        RGB_ledControl(step) ;
+                     //                       GPIO_RA14_Toggle();
+                     }
+                    
+                    
+                    
+                    
+         
               }
               else
               {
@@ -112,8 +139,80 @@ void XzwVfGet( void)
 }
 
 
+void  RGB_ledControl( int MODE) // {MODE =1  红色  ;  2 =蓝色   3=绿色   4 =黄色  5=紫色   6=白色  7= 青色  8=橘黄色  9=黄绿色  10 =天空蓝
+{
+    if(MODE==1)
+        {
+                OCMP4_CompareSecondaryValueSet (30000);
+                OCMP2_CompareSecondaryValueSet (0);
+                OCMP3_CompareSecondaryValueSet (0);
+        }
+    else if(MODE==2)
+        {
+                OCMP4_CompareSecondaryValueSet (0);
+                OCMP2_CompareSecondaryValueSet (0);
+                OCMP3_CompareSecondaryValueSet (30000);
+        }   
+    else if(MODE==3)
+        {
+                OCMP4_CompareSecondaryValueSet (0);
+                OCMP2_CompareSecondaryValueSet (30000);
+                OCMP3_CompareSecondaryValueSet (0);
+        }
+    else if(MODE==4)
+      {
+              OCMP4_CompareSecondaryValueSet (30000);
+              OCMP2_CompareSecondaryValueSet (8888);
+              OCMP3_CompareSecondaryValueSet (0);
+      }    
+    else if(MODE==5)
+      {
+              OCMP4_CompareSecondaryValueSet (18888);
+              OCMP2_CompareSecondaryValueSet (3000);
+              OCMP3_CompareSecondaryValueSet (28888);
+      }    
+  
+    else if(MODE==6)
+        {
+               OCMP4_CompareSecondaryValueSet (30000);
+               OCMP2_CompareSecondaryValueSet (30000);
+               OCMP3_CompareSecondaryValueSet (30000);
+        }
+    
+    else if(MODE==7)
+        {
+               OCMP4_CompareSecondaryValueSet (0);
+               OCMP2_CompareSecondaryValueSet (30000);
+               OCMP3_CompareSecondaryValueSet (30000);
+        }
+    else if(MODE==8)
+        {
+           OCMP4_CompareSecondaryValueSet (30000);
+           OCMP2_CompareSecondaryValueSet (4888);
+           OCMP3_CompareSecondaryValueSet (0);
+        }
+
+    else if(MODE==9)
+        {
+           OCMP4_CompareSecondaryValueSet (15000);
+           OCMP2_CompareSecondaryValueSet (15000);
+           OCMP3_CompareSecondaryValueSet (0);
+        }
+    else if(MODE==10)
+        {
+           OCMP4_CompareSecondaryValueSet (0);
+           OCMP2_CompareSecondaryValueSet (15000);
+           OCMP3_CompareSecondaryValueSet (15000);
+        }
+    else 
+        {
+            OCMP4_CompareSecondaryValueSet (0);
+            OCMP2_CompareSecondaryValueSet (0);
+            OCMP3_CompareSecondaryValueSet (0);
+        }
 
 
+}
 
 
 
