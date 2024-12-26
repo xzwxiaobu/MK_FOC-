@@ -460,13 +460,13 @@ void ADC_ResultHandler(ADCHS_CHANNEL_NUM channel, uintptr_t context)
         
    
      Get_ADC() ;
-     UVW_Axis_dq();	 
+ 
     
     if(Motor.M_State==2)
     {
-//           UVW_Axis_dq();	
-//         IF_Start_Control();	
-////         QT_Motor();		
+           UVW_Axis_dq();	
+         IF_Start_Control();	
+//         QT_Motor();		
          FOC_Svpwm_dq();
          faultdect++;
 //        if(faultdect>=200)  //10ms
@@ -543,29 +543,22 @@ void ADC_Sample_Offset(void)
 //????????
 void ADC_SAMPLE(void)
 {   
-     static  volatile uint16_t   adc_count1old ,  adc_count0old  ;
-            
-     
-//     ADC_Sample_Para.PhaseDrive_GND= (float)adc_count14;
-     
-//     adc_count1 =0.5*adc_count1  +0.5*adc_count1old ;
-//     adc_count0 =0.5*adc_count0  +0.5*adc_count0old ;
+
 //    ADC_Sample_Para.PhaseV_Curr=        adc_count1  -adc_count14- ADC_Sample_F_Para.Offset_PhaseV_Curr ;
 //    ADC_Sample_Para.PhaseW_Curr=        adc_count0 - adc_count14- ADC_Sample_F_Para.Offset_PhaseW_Curr;
-	ADC_Sample_Para.PhaseV_Curr = (1.65f - (float)( adc_count1 - ADC_Sample_F_Para.Offset_PhaseV_Curr)/4096*3.248f)*I_Gain;
-	ADC_Sample_Para.PhaseW_Curr = (1.65f - (float)( adc_count0 - ADC_Sample_F_Para.Offset_PhaseW_Curr)/4096*3.248f)*I_Gain;
+	ADC_Sample_Para.PhaseV_Curr = (1.65f - (float)( adc_count1 - ADC_Sample_F_Para.Offset_PhaseV_Curr)/4096*3.3f)*I_Gain;
+	ADC_Sample_Para.PhaseW_Curr = (1.65f - (float)( adc_count0 - ADC_Sample_F_Para.Offset_PhaseW_Curr)/4096*3.3f)*I_Gain;
 
-	ADC_Sample_Para.VBUS = (float)adc_count12/4096*3.282f*Vbus_Gain;
+	ADC_Sample_Para.VBUS = (float)adc_count12/4096*3.3f*Vbus_Gain;
 	ADC_Sample_Para.Temperature = (float)adc_count13;
-//    adc_count0old =adc_count0;
-//    adc_count1old =adc_count1;
+
 }
 
 //?????????
 void ADC_Sample_Deal(void)
 {
-//	ADC_Sample_F_Para.PhaseV_Curr = LPF_I_RUN_B*ADC_Sample_F_Para.PhaseV_Curr + LPF_I_RUN_A*ADC_Sample_Para.PhaseV_Curr;
-//	ADC_Sample_F_Para.PhaseW_Curr = LPF_I_RUN_B*ADC_Sample_F_Para.PhaseW_Curr + LPF_I_RUN_A*ADC_Sample_Para.PhaseW_Curr;
+	ADC_Sample_F_Para.PhaseV_Curr = LPF_I_RUN_B*ADC_Sample_F_Para.PhaseV_Curr + LPF_I_RUN_A*ADC_Sample_Para.PhaseV_Curr;
+	ADC_Sample_F_Para.PhaseW_Curr = LPF_I_RUN_B*ADC_Sample_F_Para.PhaseW_Curr + LPF_I_RUN_A*ADC_Sample_Para.PhaseW_Curr;
 	ADC_Sample_F_Para.VBUS =  ADC_Sample_F_Para.VBUS*LPF_I_STOP_B + ADC_Sample_Para.VBUS*LPF_I_STOP_A;
 	ADC_Sample_F_Para.Temperature = ADC_Sample_F_Para.Temperature*LPF_I_STOP_B + ADC_Sample_Para.Temperature*LPF_I_STOP_A;
 }

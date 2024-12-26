@@ -292,9 +292,9 @@ void Motor_Init(void)
 //    PLL_HFI_Para.Kp = 540.35f;					//阻尼比为1，带宽为50Hz		Kp=2ζω0/k2			ω0=2pi
 //    PLL_HFI_Para.Ki = 72995.6f;					//Ki=(ω0)^2/k2
 
-    Sensorless.Speed_Max = 5000;				//定义无感速度目标值
-    Sensorless.w1 = 450*Motor.P;				//低速临界值
-    Sensorless.w2 = 550*Motor.P;				//高速临界值
+//    Sensorless.Speed_Max = 5000;				//定义无感速度目标值
+//    Sensorless.w1 = 450*Motor.P;				//低速临界值
+//    Sensorless.w2 = 550*Motor.P;				//高速临界值
 
     M_SPEED = 800;                              // 机械速度 
     HFI_Speed = 550;

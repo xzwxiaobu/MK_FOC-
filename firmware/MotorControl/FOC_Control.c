@@ -239,11 +239,11 @@ void UVW_Axis_dq(void)
 	CLARKE_ICurr.Iu=-CLARKE_ICurr.Iv-CLARKE_ICurr.Iw;
     CLARKE_Cale((M_CLARKE)&CLARKE_ICurr);					//CLARK变换函数，等峰值变换
    
-    if(Motor.Control_Mode== IF_Control)	
-    {
+//    if(Motor.Control_Mode== IF_Control)	
+//    {
           PARK_PCurr.Theta = IF_Theta;	
     
-    }
+//    }
   
     
 //           Get_Postion() ;
@@ -260,12 +260,13 @@ void UVW_Axis_dq(void)
 void IF_Start_Control(void)
 {
     float IF_Freq_EX = 0.0f;
-
+  
+    
     IF_Freq_GXieLv.XieLv_Grad = IF_F_Grad_0D1HZ ;   //定义频率的梯度值
     IF_Freq_GXieLv.Grad_Timer = IF_F_Grad_Timer;    //定义频率的梯度时间
     IF_Freq_GXieLv.XieLv_X = IF_Fre_Max;			//定义梯度上限
+   
     IF_Freq_GXieLv.Timer_Count ++;                 //20K    1/20000*20
-    
     if(IF_Freq_GXieLv.Timer_Count > IF_Freq_GXieLv.Grad_Timer)
     {
         IF_Freq_GXieLv.Timer_Count = 0;
@@ -273,16 +274,16 @@ void IF_Start_Control(void)
     }
 
     IF_Freq_EX = Limit_Sat(IF_Freq_GXieLv.XieLv_Y, Motor_Freq_Max, Motor_Freq_Min );
-//    IF_Theta += (float)(PIX2 * IF_Freq_EX) / TIM1_Frq;
-    volatile  float addcnt;
-     addcnt=   IF_Freq_EX *  PIX2 * TS;
-     IF_Theta = IF_Theta+ addcnt ;
+    IF_Theta += (float)(PIX2 * IF_Freq_EX) / TIM1_Frq;
+//    volatile  float addcnt;
+//     addcnt=   IF_Freq_EX *  PIX2 * TS;
+//     IF_Theta = IF_Theta+ 0.1 ;
     
 //    IF_Theta=IF_Theta+0.0001 ;
-    while(IF_Theta >= PIX2)
+    while(IF_Theta > PIX2)
         { IF_Theta -= PIX2;}
    
-    while(IF_Theta <= 0)
+    while(IF_Theta < 0)
        { IF_Theta += PIX2 ;}
     
 		

@@ -220,9 +220,7 @@ void SVPWM_Cale(M_SVPWM	pv)
         wn= (uint16_t)((Limit_Sat(pv->Tc, 0.5f, -0.5f)+ 0.5f)* MCPWM_Period);  //  3000
         
         
-        un  = 2000 ;
-        vn  = 2000 ;
-        wn  = 2000  ;
+
         
         MCPWM_ChannelPrimaryDutySet(MCPWM_CH_1, un);          //b15  1L ??? down       B14  1h  ??? up adc    mk ?act +- inv?
         MCPWM_ChannelPrimaryDutySet(MCPWM_CH_2, vn);         // b13  2L                B12  2h

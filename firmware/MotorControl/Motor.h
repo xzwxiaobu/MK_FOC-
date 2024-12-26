@@ -44,7 +44,7 @@ typedef volatile uint8_t  vu8;
 //#define TIM1_Period_Half 		4200			//定时器1重装载值的一半
 
 #define Speed_Cal_Period		20				//速度环计算周期		2k
-#define BWc_rps					2000	//电流环带宽
+#define BWc_rps					1000	//电流环带宽
 
 #define STOP			0		//电机停止状态
 #define RUN				1		//电机速度电流闭环
@@ -63,7 +63,7 @@ typedef volatile uint8_t  vu8;
 #define HS_Control			5		//低速HFI，高速SMO
 
 #define QT_Angle				210	//强拖至角度（0——360）
-#define QT_Frq					40	//强拖频率=TIM1_Frq/QT_Frq
+#define QT_Frq					50	//强拖频率=TIM1_Frq/QT_Frq
 #define QT_IF_Mode			    3  //1——强拖至角度；2——强拖旋转；3——IF启功
 
 #define IF_Theta_Init							4.71238898f		//开环拖动角为270°，一开始Iq在实际转子的q轴分量为0
@@ -73,8 +73,8 @@ typedef volatile uint8_t  vu8;
 
 #define IF_F_Grad_Timer 					20				//定义角度改变频率的梯度时间20    20  
 #define IF_F_Grad_0D1HZ    				   0.1f					//定义角度改变频率的梯度值0.08 0.1
-#define IF_Fre_Max						   20.0f			    	//IF角度改变上限值82 80   4A-3000RPM/MIN    3000/60=50hz  50*p=200
-#define IF_Current_Max					   0.1f					//速度开环，电流闭环中的电流上限-1.8 
+#define IF_Fre_Max						   50.0f			    	//IF角度改变上限值82 80   4A-3000RPM/MIN    3000/60=50hz  50*p=200
+#define IF_Current_Max					   1.0f					//速度开环，电流闭环中的电流上限-1.8 
 
 #define Speed_Ref_Timer						    30						//定义目标速度改变的梯度时间
 #define Speed_Ref_OD							1.0f					//定义目标速度改变的梯度值

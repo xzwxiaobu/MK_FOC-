@@ -31,7 +31,7 @@ typedef const int8_t sc8;
 
 
 #define Encoder_Fre		12000		  // TIM1_Frq/PWMZD_Count*60 
-#define Encoder_lines	4*1000
+#define Encoder_lines	4*4         //  5对级的hall  应该霍尔 一个机械周期 5次 *2 跳变  两个霍尔 *2   // 4*1000 是编码器
 //#define Encoder_Pulse	16384			//Encoder_lines*4
 //#define TIM3_Pulse		16384			//???3????
 
@@ -80,6 +80,9 @@ void Send_TO_PC(void);						//发送数据至上位机观测
 void IF_Start_Control(void);			   //IF启动
 void Postion_To_Zero_Double(void);        //二次调零
 void J_Scope_Write(void);					//J_Scope数据写入
+float  Get_Postion (int mode ) ;
+float  Get_Speed ( int32_t Timecnt ,int mode) ;   
+
 
 #endif
 

@@ -12,7 +12,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 6E6FCDB2467BF8F33B94FD7D70D367B3
+  userChecksum: 6EE398471D008CB557D4747A93AB9F88
 - generatedChecksum: F815A58CDBCB7A2D16FB75A8A7F76887
   logicalPath: config/pic32mk_mcm_curiosity_pro
   name: interrupts.c
@@ -61,21 +61,21 @@ files:
   physicalPath: peripheral/evic
   security: NON_SECURE
   type: SOURCE
-  userChecksum: DDAE0A39F628E569FC7B64013302A848
-- generatedChecksum: 5EDDFE5F45E25F52BBA71499BA5068E8
+  userChecksum: 2EC431B264ABD9E52030B25A7778B900
+- generatedChecksum: A86D017CB0C23D24343C9841E0322CC5
   logicalPath: config/pic32mk_mcm_curiosity_pro/peripheral/gpio
   name: plib_gpio.c
   physicalPath: peripheral/gpio
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 5EDDFE5F45E25F52BBA71499BA5068E8
+  userChecksum: A86D017CB0C23D24343C9841E0322CC5
 - generatedChecksum: 841387E7BFB6D2E70243B9DF11E4AEEF
   logicalPath: config/pic32mk_mcm_curiosity_pro/peripheral/i2c/master
   name: plib_i2c1_master.c
   physicalPath: peripheral/i2c/master
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 9E973892C352AD2EBD3E80DBB1DD8CC9
+  userChecksum: F3D5E552BA79A8F0E3F9FF0A4D9D9EFB
 - generatedChecksum: 16D73C86E9470E881E39B2380FB0B1D9
   logicalPath: config/pic32mk_mcm_curiosity_pro/peripheral/icap
   name: plib_icap3.c
@@ -152,7 +152,7 @@ files:
   physicalPath: peripheral/uart
   security: NON_SECURE
   type: SOURCE
-  userChecksum: 7C6F375C6CC8C1B995F1E5C5E5BC3B0E
+  userChecksum: 808B024D74B93881220B1CC58921C9E5
 - generatedChecksum: AEAD678D52A900BF13F45EFDA811BC10
   logicalPath: config/pic32mk_mcm_curiosity_pro/stdio
   name: xc32_monitor.c
@@ -166,7 +166,7 @@ files:
   physicalPath: ''
   security: NON_SECURE
   type: HEADER
-  userChecksum: 5EA870452299D2B26B9D7AFCF0598637
+  userChecksum: A475485FA4726C067B04659F9D70C1F1
 - generatedChecksum: E189C26B2269F8DE46033CCD0621958D
   logicalPath: config/pic32mk_mcm_curiosity_pro
   name: device.h
@@ -236,7 +236,7 @@ files:
   physicalPath: peripheral/i2c/master
   security: NON_SECURE
   type: HEADER
-  userChecksum: 854008CD04D45CA25560660A95BE6964
+  userChecksum: 0A3BF500786114D3808D3EAD67A12E85
 - generatedChecksum: B963C6FE44292A1C4A14C3BA5BE95AEE
   logicalPath: config/pic32mk_mcm_curiosity_pro/peripheral/i2c/master
   name: plib_i2c_master_common.h

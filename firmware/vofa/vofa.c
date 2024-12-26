@@ -85,12 +85,12 @@ void XzwVfGet( void)
 //        the = sinf(pi) ;
 //        this = cosf(pi) ;
 //        that =sinf(pi+M_PI);
-         static float xxx=-10.0f ;
-         xxx =xxx+0.5;
+         static float Wxxx=-10.0f ;
+         Wxxx =Wxxx+0.5;
          
-         if(xxx>10.0f)
+         if(Wxxx>10.0f)
          {
-          xxx =-10.0f ;
+          Wxxx =-10.0f ;
          }
          
          
@@ -98,8 +98,8 @@ void XzwVfGet( void)
         
         static int errcnt=0 ;
         static float num[10]={0};
-//        num[0]= ADC_Sample_Para.PhaseV_Curr ;
-//        num[1]= ADC_Sample_Para.PhaseW_Curr ;
+//        num[0]= ADC_Sample_F_Para.PhaseV_Curr ;
+//        num[1]= ADC_Sample_F_Para.PhaseW_Curr ;
 //        num[2]= CLARKE_ICurr.Iu ;
 //        num[3]=adc_count14 ;
 //        num[4]=ADC_Sample_F_Para.VBUS  ;
@@ -107,7 +107,7 @@ void XzwVfGet( void)
 //        num[6]= IF_Theta;
 //        num[7]=adc_count1;
 //        num[8]=adc_count0 ;
-        num[0]=2*(Sigmoid(xxx)-0.5) ; 
+//        num[0]=2*(Sigmoid(Wxxx)-0.5) ; 
         
         if(  num[0]<0 ||  num[0]>1)
         {
@@ -115,17 +115,36 @@ void XzwVfGet( void)
         
         }
         
-         num[1]=adc_count0  ; 
-           num[2]=adc_count1  ; 
+         num[2]= PARK_PCurr.Theta  ; 
+         num[3]= IPARK_PVdq.Theta; 
 //         num[2]=tanf(xxx); 
-         num[3]=  xxx /(1+my_abs(xxx)) ;
-         num[4]= Sat(xxx,1.0f) ;
-         num[5]= xxx / sqrtf(1+xxx*xxx);
+//         num[3]=  Wxxx /(1+my_abs(Wxxx)) ;
+//         num[4]= Sat(Wxxx,1.0f) ;
+//         num[5]= Wxxx / sqrtf(1+Wxxx*Wxxx);
+//         
+//         num[6]= 2/M_PI*(atanf((M_PI/2)*Wxxx) );
          
-         num[6]= 2/M_PI*(atanf((M_PI/2)*xxx) );
+            num[4]= IF_Theta   ;
+            num[5]= CLARKE_ICurr.Iv ;
+            num[6]= CLARKE_ICurr.Iw;
+
          
+         num[7]= NTC_Temp;
+         num[8]= ADC_Sample_F_Para.VBUS;
          
+           num[0]= PARK_PCurr.Ds ;      //Get_Postion(1);
+           num[1]= PARK_PCurr.Qs ;
          
+//            int32_t v , p;
+//            float_t  vv ,pp;
+//            v= (int32_t) (VEL1CNT) ;
+//            p= (int32_t) (POS1CNT) ;
+//            vv =(float_t) v;
+//            pp =(float_t) p;
+//          num[0]= vv ;
+////          num[1]= pp ;
+          
+        
         static  unsigned char txBuf[4*VOFAnum+4]={0};   // N*4+4
         txBuf[4*VOFAnum]=0x00;//??
         txBuf[4*VOFAnum+1]=0x00;

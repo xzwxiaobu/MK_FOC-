@@ -231,9 +231,9 @@ int main ( void )
      QEI1_Start()  ;    
   
 //    /* 输出 比较 time2   30000 最大值 妖紫色：*/
-    OCMP4_CompareSecondaryValueSet (30000);     //Ra7       30000max
-    OCMP2_CompareSecondaryValueSet (30000);     //RB1         600020
-    OCMP3_CompareSecondaryValueSet (30000);     //Rd3
+    OCMP4_CompareSecondaryValueSet (0);     //Ra7       30000max
+    OCMP2_CompareSecondaryValueSet (100);     //RB1         600020
+    OCMP3_CompareSecondaryValueSet (200);     //Rd3
     
 //    ICAP3_Enable(); 
 //    ICAP4_Enable();
@@ -348,32 +348,17 @@ int main ( void )
             tickflag=!tickflag ;
             GPIO_RB0_Toggle();
             temp_trans(ADC_Sample_F_Para.Temperature, &NTC_Temp);		
-            
-     
-                   
+              
         }  
       
-//        if(tickflag!=0)
+
         {
             
-           CDAC2_DataWrite(2048-1);
-           CDAC3_DataWrite(1024-1);
+           CDAC2_DataWrite(2048);
+           CDAC3_DataWrite(1024);
 //                     CDAC3_DataWrite(4095);   //A8
 //                     CDAC2_DataWrite(2048);   //c10
-            sample_number++;
-
-            if (sample_number >= 100)
-            {
-               sample_number = 0;
-            }
-        
         }
-//        else
-//        {
-////           CDAC2_DataWrite(0);
-////           CDAC3_DataWrite(0);
-//        
-//        }
 
 
         
@@ -414,19 +399,19 @@ int main ( void )
         tickNow2 =  getSysTick(); 
 
        
-        #define ictime 100
-        if((int32_t)(tickNow2 - ticOld2) >= ictime)  	  //20k=50微秒   1ms 20次 
-        { 	
-            ticOld2 = tickNow2;	
+//        #define ictime 1
+//        if((int32_t)(tickNow2 - ticOld2) >= ictime)  	  //20k=50微秒   1ms 20次 
+//        { 	
+//            ticOld2 = tickNow2;	
             XzwVfGet(); //??????????
-
-        }    
+//
+//        }    
 
        
            /* vofa+ 解析上位机数据*/
 
         {    
-              XzwVfsend(); // 解析 vofa 上传的数据 
+//              XzwVfsend(); // 解析 vofa 上传的数据 
         }
           
         /* 使能 xzw  run   stop foc*/  
@@ -434,12 +419,12 @@ int main ( void )
         static volatile  uint32_t  WW ;
         WW = GPIO_RC1_Get() ;
         static volatile int runoncetime  ;
-        if(1)   // 使能  run  GPIO_RC1_Get()==0
+        if ( GPIO_RC1_Get()==1)
         {     
              runoncetime++;
              if(runoncetime ==5)
              {  
-
+//                RGB_ledControl(3);
                 M_RUN() ;  // 检测一次 使能一次mcpwm 
                 Motor.M_State=2;
              }
@@ -447,8 +432,9 @@ int main ( void )
         }
         else
         {
-//           M_STOP();      // 禁止mcpwm  把占空比 调制为0 ，清空相关 控制变量    
-           runoncetime =0; 
+//            M_STOP();      // 禁止mcpwm  把占空比 调制为0 ，清空相关 控制变量    
+            runoncetime =0; 
+//            RGB_ledControl(6);
         }
        
         
@@ -458,11 +444,12 @@ int main ( void )
         static volatile  uint32_t  spp ;
          spp= GPIO_RC2_Get() ;
         static volatile int stoponcetime  ;
-        if(GPIO_RC2_Get()==0)   // 使能  run 
+        if(GPIO_RC2_Get()==1)   // 使能  run 
         {     
              stoponcetime++;
              if(stoponcetime ==5)
-             {
+             {     
+//                   RGB_ledControl(4);
                    M_STOP() ;  // 检测一次 使能一次mcpwm 
                    Motor.M_State=0;
              }
@@ -472,6 +459,7 @@ int main ( void )
         {
 //           M_STOP();      // 禁止mcpwm  把占空比 调制为0 ，清空相关 控制变量    
            stoponcetime =0; 
+//           RGB_ledControl(6);
         }
         
 
