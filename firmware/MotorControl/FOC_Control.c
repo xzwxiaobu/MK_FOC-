@@ -3,8 +3,8 @@
 
 CLARKE      								 CLARKE_ICurr = CLARKE_DEFAULTS;
 CLARKE									     CLARKE_UCurr = CLARKE_DEFAULTS;
-PARK        								 PARK_PCurr = PARK_DEFAULTS;
-IPARK       								 IPARK_PVdq = IPARK_DEFAULTS;
+PARK        								 PARK_PCurr   = PARK_DEFAULTS;
+IPARK       								 IPARK_PVdq   = IPARK_DEFAULTS;
 ICLARKE	                                     ICLARKE_PVuvw=ICLARKE_DEFAULTS;
 
 
