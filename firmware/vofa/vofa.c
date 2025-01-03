@@ -98,8 +98,10 @@ void XzwVfGet( void)
         
         static int errcnt=0 ;
         static float num[10]={0};
-//        num[0]= ADC_Sample_F_Para.PhaseV_Curr ;
-//        num[1]= ADC_Sample_F_Para.PhaseW_Curr ;
+//        num[0]= ADC_Sample_Para.PhaseV_Curr ;
+//        num[1]= ADC_Sample_Para.PhaseW_Curr ;
+        num[2]= adc_count1 ;
+        num[3]= adc_count0 ;
 //        num[2]= CLARKE_ICurr.Iu ;
 //        num[3]=adc_count14 ;
 //        num[4]=ADC_Sample_F_Para.VBUS  ;
@@ -115,8 +117,8 @@ void XzwVfGet( void)
         
         }
         
-         num[2]= PARK_PCurr.Theta  ; 
-         num[3]= IPARK_PVdq.Theta; 
+//         num[2]= PARK_PCurr.Theta  ; 
+//         num[3]= IPARK_PVdq.Theta; 
 //         num[2]=tanf(xxx); 
 //         num[3]=  Wxxx /(1+my_abs(Wxxx)) ;
 //         num[4]= Sat(Wxxx,1.0f) ;

@@ -467,6 +467,7 @@
         <property key="SPI/I2S 4" value="true"/>
         <property key="SPI/I2S 5" value="true"/>
         <property key="SPI/I2S 6" value="true"/>
+        <property key="SecureSegment.SegmentProgramming" value="FullChipProgramming"/>
         <property key="TIMER1" value="true"/>
         <property key="TIMER2" value="true"/>
         <property key="TIMER3" value="true"/>
@@ -507,7 +508,7 @@
                   value="${memories.instruction.ram.ranges}"/>
         <property key="memories.programmemory" value="true"/>
         <property key="memories.programmemory.ranges" value="1d000000-1d0fffff"/>
-        <property key="poweroptions.powerenable" value="true"/>
+        <property key="poweroptions.powerenable" value="false"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>
         <property key="programoptions.eraseb4program" value="true"/>
         <property key="programoptions.ledbrightness" value="5"/>
@@ -534,7 +535,6 @@
                   value="Press to select which tool pack to use"/>
         <property key="voltagevalue" value="3.435"/>
         <property key="冻结所有其他外设" value="true"/>
-        <property key="安全段。分部编程" value="FullChipProgramming"/>
       </ICD4Tool>
       <PICkit3PlatformTool>
         <property key="ADC 1" value="true"/>
@@ -1198,7 +1198,7 @@
         <property key="periphComp4.gte" value="gt"/>
         <property key="periphComp5.gte" value="gt"/>
         <property key="periphComp6.gte" value="gt"/>
-        <property key="poweroptions.powerenable" value="true"/>
+        <property key="poweroptions.powerenable" value="false"/>
         <property key="programmerToGoFilePath"
                   value="F:/RJ/mk/dcu 1000/ocmp_compare_mode/firmware/pic32mk_mcm_curiosity_pro.X/debug/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_pro_ptg"/>
         <property key="programoptions.donoteraseauxmem" value="false"/>

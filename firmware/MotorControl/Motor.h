@@ -73,8 +73,8 @@ typedef volatile uint8_t  vu8;
 
 #define IF_F_Grad_Timer 					20				//定义角度改变频率的梯度时间20    20  
 #define IF_F_Grad_0D1HZ    				   0.1f					//定义角度改变频率的梯度值0.08 0.1
-#define IF_Fre_Max						   50.0f			    	//IF角度改变上限值82 80   4A-3000RPM/MIN    3000/60=50hz  50*p=200
-#define IF_Current_Max					   1.0f					//速度开环，电流闭环中的电流上限-1.8 
+#define IF_Fre_Max						   10.0f			    	//IF角度改变上限值82 80   4A-3000RPM/MIN    3000/60=50hz  50*p=200
+#define IF_Current_Max					   0.4f					//速度开环，电流闭环中的电流上限-1.8 
 
 #define Speed_Ref_Timer						    30						//定义目标速度改变的梯度时间
 #define Speed_Ref_OD							1.0f					//定义目标速度改变的梯度值

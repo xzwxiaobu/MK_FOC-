@@ -326,11 +326,16 @@ int main ( void )
   #endif  
     EVIC_INT_Enable();
     /* adc  漂零矫正 */
+     MCPWM_Start();
     ADC_Sample_Offset();							//????
     Motor_Init() ;
     M_STOP(); 
     Init_Over=1 ;
     WDT_Enable( );
+    
+    CDAC2_DataWrite(adc_count0);
+    CDAC3_DataWrite(adc_count1);
+    
     volatile static  uint8_t sample_number = 0 ;
     while ( true )
     {  
@@ -354,8 +359,7 @@ int main ( void )
 
         {
             
-           CDAC2_DataWrite(2048);
-           CDAC3_DataWrite(1024);
+
 //                     CDAC3_DataWrite(4095);   //A8
 //                     CDAC2_DataWrite(2048);   //c10
         }
@@ -398,13 +402,13 @@ int main ( void )
         static volatile  uint32_t    tickNow2;  
         tickNow2 =  getSysTick(); 
 
-       
-//        #define ictime 1
+//       
+//        #define ictime 40
 //        if((int32_t)(tickNow2 - ticOld2) >= ictime)  	  //20k=50微秒   1ms 20次 
 //        { 	
 //            ticOld2 = tickNow2;	
             XzwVfGet(); //??????????
-//
+
 //        }    
 
        
@@ -463,6 +467,19 @@ int main ( void )
         }
         
 
+//        if( (Motor.M_State==0))   // 模式 0 停止 重新做 校验 
+//        {
+//                M_STOP(); 
+//                
+//
+//                ADC_Sample_Offset () ;
+//
+//                Init_Over=1   ;
+//
+//        }
+        
+    
+        
 //        IIC1_HANDLE();
           
           

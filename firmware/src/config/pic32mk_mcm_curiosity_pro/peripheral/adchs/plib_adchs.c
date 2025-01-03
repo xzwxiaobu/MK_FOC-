@@ -522,34 +522,31 @@ void ADC_Sample_Offset(void)
     u32 Sum1 = 0;
     u32 Sum2 = 0;
 
-    for(i=0; i<30; i++)
+    for(i=0; i<200; i++)
     {
-        for(j=0; j<60; j++)
+        for(j=0; j<20; j++)
         {
             ADC_Sample_Para.Offset_PhaseV_Curr = adc_count1;
             ADC_Sample_Para.Offset_PhaseW_Curr = adc_count0;
 
-            delay_1ms(1);
+//            delay_1ms(1);
         }
         Sum1 += ADC_Sample_Para.Offset_PhaseV_Curr;
         Sum2 += ADC_Sample_Para.Offset_PhaseW_Curr;
     }
-    ADC_Sample_F_Para.Offset_PhaseV_Curr = Sum1/30 - 2047;
-    ADC_Sample_F_Para.Offset_PhaseW_Curr = Sum2/30 - 2047;
+    ADC_Sample_F_Para.Offset_PhaseV_Curr = Sum1/200 - 2048;
+    ADC_Sample_F_Para.Offset_PhaseW_Curr = Sum2/200 - 2048;
 }
-
-
 
 //????????
 void ADC_SAMPLE(void)
 {   
 
-//    ADC_Sample_Para.PhaseV_Curr=        adc_count1  -adc_count14- ADC_Sample_F_Para.Offset_PhaseV_Curr ;
-//    ADC_Sample_Para.PhaseW_Curr=        adc_count0 - adc_count14- ADC_Sample_F_Para.Offset_PhaseW_Curr;
+
 	ADC_Sample_Para.PhaseV_Curr = (1.65f - (float)( adc_count1 - ADC_Sample_F_Para.Offset_PhaseV_Curr)/4096*3.3f)*I_Gain;
 	ADC_Sample_Para.PhaseW_Curr = (1.65f - (float)( adc_count0 - ADC_Sample_F_Para.Offset_PhaseW_Curr)/4096*3.3f)*I_Gain;
 
-	ADC_Sample_Para.VBUS = (float)adc_count12/4096*3.3f*Vbus_Gain;
+	ADC_Sample_Para.VBUS = (float)adc_count12/4096*3.3f*Vbus_Gain;  
 	ADC_Sample_Para.Temperature = (float)adc_count13;
 
 }
@@ -557,8 +554,8 @@ void ADC_SAMPLE(void)
 //?????????
 void ADC_Sample_Deal(void)
 {
-	ADC_Sample_F_Para.PhaseV_Curr = LPF_I_RUN_B*ADC_Sample_F_Para.PhaseV_Curr + LPF_I_RUN_A*ADC_Sample_Para.PhaseV_Curr;
-	ADC_Sample_F_Para.PhaseW_Curr = LPF_I_RUN_B*ADC_Sample_F_Para.PhaseW_Curr + LPF_I_RUN_A*ADC_Sample_Para.PhaseW_Curr;
+//	ADC_Sample_F_Para.PhaseV_Curr = LPF_I_RUN_B*ADC_Sample_F_Para.PhaseV_Curr + LPF_I_RUN_A*ADC_Sample_Para.PhaseV_Curr;
+//	ADC_Sample_F_Para.PhaseW_Curr = LPF_I_RUN_B*ADC_Sample_F_Para.PhaseW_Curr + LPF_I_RUN_A*ADC_Sample_Para.PhaseW_Curr;
 	ADC_Sample_F_Para.VBUS =  ADC_Sample_F_Para.VBUS*LPF_I_STOP_B + ADC_Sample_Para.VBUS*LPF_I_STOP_A;
 	ADC_Sample_F_Para.Temperature = ADC_Sample_F_Para.Temperature*LPF_I_STOP_B + ADC_Sample_Para.Temperature*LPF_I_STOP_A;
 }

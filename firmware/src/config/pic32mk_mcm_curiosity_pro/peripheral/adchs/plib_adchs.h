@@ -149,6 +149,8 @@ typedef struct {
 	int16_t 	Offset_PhaseW_Curr;		//W??????
 	} ADC_Sample;
 
+    
+    
 #define ADC_Sample_DEFAULTS		{0,0,0,0,0,0}			//?????
 
 typedef struct {
@@ -180,6 +182,9 @@ extern float 		NTC_Temp;
 extern ADC_Sample			ADC_Sample_Para;
 extern ADC_Sample_F		    ADC_Sample_F_Para;
 
+
+//extern uint16_t	ADC0[200];	//ADC????
+//extern uint16_t	ADC1[200];	//ADC????
 /* USER CODE END Private defines */
 
 
