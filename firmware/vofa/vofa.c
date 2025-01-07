@@ -116,7 +116,8 @@ void XzwVfGet( void)
           errcnt ++;
         
         }
-        
+        num[2] =PARK_PCurr.Alpha;
+        num[3] =PARK_PCurr.Beta;
 //         num[2]= PARK_PCurr.Theta  ; 
 //         num[3]= IPARK_PVdq.Theta; 
 //         num[2]=tanf(xxx); 
@@ -125,7 +126,7 @@ void XzwVfGet( void)
 //         num[5]= Wxxx / sqrtf(1+Wxxx*Wxxx);
 //         
 //         num[6]= 2/M_PI*(atanf((M_PI/2)*Wxxx) );
-         
+            extern  u16 	IF_Angle;
             num[4]= IF_Theta   ;
             num[5]= CLARKE_ICurr.Iv ;
             num[6]= CLARKE_ICurr.Iw;

@@ -420,7 +420,7 @@ int main ( void )
           
         /* Ê¹ÄÜ xzw  run   stop foc*/  
         GPIO_RC1_InputEnable();
-        static volatile  uint32_t  WW ;
+        static volatile  uint32_t  WW ; 
         WW = GPIO_RC1_Get() ;
         static volatile int runoncetime  ;
         if ( GPIO_RC1_Get()==1)

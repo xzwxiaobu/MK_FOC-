@@ -241,7 +241,7 @@ void UVW_Axis_dq(void)
    
 //    if(Motor.Control_Mode== IF_Control)	
 //    {
-          PARK_PCurr.Theta = IF_Theta;	
+          PARK_PCurr.Theta =IF_Theta ;	
     
 //    }
   
