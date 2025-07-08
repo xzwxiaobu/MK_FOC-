@@ -3,17 +3,20 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/src/config/pic32mk_mcm_curiosity_pro/peripheral/adchs/plib_adchs.h</file>
-            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/vofa/vofa.h</file>
+            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/src/Speed_Enconder_HALLCAL.c</file>
+            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/MotorControl/SVPWM.h</file>
             <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/MotorControl/FOC_Control.h</file>
-            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/MotorControl/Motor.h</file>
-            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/MotorControl/PI_Cale.c</file>
-            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/MotorControl/Coordinate_transform.c</file>
-            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/src/config/pic32mk_mcm_curiosity_pro/peripheral/adchs/plib_adchs.c</file>
-            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/src/main.c</file>
-            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/MotorControl/Motor.c</file>
+            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/MotorControl/SVPWM.c</file>
+            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/src/config/pic32mk_mcm_curiosity_pro/peripheral/gpio/plib_gpio.h</file>
             <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/vofa/vofa.c</file>
             <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/MotorControl/FOC_Control.c</file>
+            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/MotorControl/Motor.h</file>
+            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/MotorControl/PI_Cale.c</file>
+            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/src/config/pic32mk_mcm_curiosity_pro/peripheral/uart/plib_uart6.c</file>
+            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/src/config/pic32mk_mcm_curiosity_pro/peripheral/adchs/plib_adchs.c</file>
+            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/src/config/pic32mk_mcm_curiosity_pro/interrupts.c</file>
+            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/src/main.c</file>
+            <file>file:/F:/RJ/mk/dcu%201000/ocmp_compare_mode/dcu1000/firmware/MotorControl/Motor.c</file>
         </group>
     </open-files>
 </project-private>

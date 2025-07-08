@@ -56,8 +56,8 @@ float  Get_Speed ( int32_t Timecnt ,int mode)     //  放在
          vv =(float_t) v;
          vv1=  (vv)/enconder*PIX2*(1000/Timecnt)  ;       //  单位是rad/s       机械速度
          vv2 = (vv)/enconder*(1000/Timecnt)*60 ;          //  单位是rpm/min     机械速度
-         evv1= vv1*Motor.P   ;                           //  单位是rad/s      机械速度
-         evv2 =vv2*Motor.P   ;                          //  单位是rpm/min     机械速度
+         evv1= vv1*Motor.P   ;                           //  单位是rad/s        电气速度
+         evv2 =vv2*Motor.P   ;                          //  单位是rpm/min       电气速度
          
        
          vv0ld = vv ;
@@ -66,7 +66,7 @@ float  Get_Speed ( int32_t Timecnt ,int mode)     //  放在
      
     if(mode==1)
     {
-          return  vv1  ;                                  // X相对于起始位置   PIC32MK qei 验证
+          return  vv1  ;                                   // X相对于起始位置   PIC32MK qei 验证
     }
     else if(mode==2)
     {

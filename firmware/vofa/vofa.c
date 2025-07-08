@@ -98,45 +98,45 @@ void XzwVfGet( void)
         
         static int errcnt=0 ;
         static float num[10]={0};
-//        num[0]= ADC_Sample_Para.PhaseV_Curr ;
-//        num[1]= ADC_Sample_Para.PhaseW_Curr ;
-        num[2]= adc_count1 ;
-        num[3]= adc_count0 ;
+        num[0]= ADC_Sample_Para.PhaseV_Curr ;
+        num[1]= ADC_Sample_Para.PhaseW_Curr ;
+//        num[2]= adc_count1 ;
+//        num[3]= adc_count0 ;
 //        num[2]= CLARKE_ICurr.Iu ;
 //        num[3]=adc_count14 ;
-//        num[4]=ADC_Sample_F_Para.VBUS  ;
-//        num[5]= NTC_Temp ;
-//        num[6]= IF_Theta;
-//        num[7]=adc_count1;
-//        num[8]=adc_count0 ;
+//        num[4]= ADC_Sample_F_Para.VBUS  ;
+        num[5]= NTC_Temp;//NTC_Temp ;
+       num[6]= SVPWM_dq.u3 ; //IF_Theta;
+        num[7]=SVPWM_dq.u1;
+        num[8]=SVPWM_dq.u2 ;
 //        num[0]=2*(Sigmoid(Wxxx)-0.5) ; 
         
-        if(  num[0]<0 ||  num[0]>1)
-        {
-          errcnt ++;
-        
-        }
-        num[2] =PARK_PCurr.Alpha;
-        num[3] =PARK_PCurr.Beta;
+//        if(  num[0]<0 ||  num[0]>1)
+//        {
+//          errcnt ++;
+//        
+//        }
+//        num[2] =PARK_PCurr.Alpha;
+//        num[3] =PARK_PCurr.Beta;
 //         num[2]= PARK_PCurr.Theta  ; 
 //         num[3]= IPARK_PVdq.Theta; 
 //         num[2]=tanf(xxx); 
 //         num[3]=  Wxxx /(1+my_abs(Wxxx)) ;
 //         num[4]= Sat(Wxxx,1.0f) ;
 //         num[5]= Wxxx / sqrtf(1+Wxxx*Wxxx);
-//         
+////         
 //         num[6]= 2/M_PI*(atanf((M_PI/2)*Wxxx) );
-            extern  u16 	IF_Angle;
+//            extern  u16 	IF_Angle;
             num[4]= IF_Theta   ;
-            num[5]= CLARKE_ICurr.Iv ;
-            num[6]= CLARKE_ICurr.Iw;
-
-         
-         num[7]= NTC_Temp;
-         num[8]= ADC_Sample_F_Para.VBUS;
-         
-           num[0]= PARK_PCurr.Ds ;      //Get_Postion(1);
-           num[1]= PARK_PCurr.Qs ;
+//            num[5]= CLARKE_ICurr.Iv ;
+//            num[6]= CLARKE_ICurr.Iw;
+//
+//         
+//         num[7]= NTC_Temp;
+//         num[8]= ADC_Sample_F_Para.VBUS;
+//         
+//           num[0]= PARK_PCurr.Ds ;      //Get_Postion(1);
+//           num[1]= PARK_PCurr.Qs ;
          
 //            int32_t v , p;
 //            float_t  vv ,pp;

@@ -63,7 +63,7 @@ typedef volatile uint8_t  vu8;
 #define HS_Control			5		//低速HFI，高速SMO
 
 #define QT_Angle				210	//强拖至角度（0——360）
-#define QT_Frq					50	//强拖频率=TIM1_Frq/QT_Frq
+#define QT_Frq					50	//强拖频率=TIM1_Frq/QT_Frq（400）
 #define QT_IF_Mode			    3  //1——强拖至角度；2——强拖旋转；3——IF启功
 
 #define IF_Theta_Init							4.71238898f		//开环拖动角为270°，一开始Iq在实际转子的q轴分量为0

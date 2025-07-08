@@ -216,7 +216,7 @@ void M_RUN(void)
 void QT_Motor(void)
 {
     IF_Frq ++;
-    if(IF_Frq == QT_Frq)					//强拖频率
+    if(IF_Frq == QT_Frq)					//强拖频率50微秒 *50=2500  2.5ms
     {
         IF_Frq = 0;
         IPARK_PVdq.Alpha = ualpha_tab[IF_Angle];
@@ -274,7 +274,7 @@ void IF_Start_Control(void)
     }
 
     IF_Freq_EX = Limit_Sat(IF_Freq_GXieLv.XieLv_Y, Motor_Freq_Max, Motor_Freq_Min );
-    IF_Theta += (float)(PIX2 * IF_Freq_EX) / TIM1_Frq;
+    IF_Theta += (float)(PIX2 * IF_Freq_EX) / TIM1_Frq;  // 2pi/f= 2pi*(T)) 2PI/f   f= TIM1_Frq /IF_Freq_EX
 //    volatile  float addcnt;
 //     addcnt=   IF_Freq_EX *  PIX2 * TS;
 //     IF_Theta = IF_Theta+ 0.1 ;
@@ -765,7 +765,7 @@ void Send_TO_PC(void)
 //    vofa_data[0] =  ADC_Value[0];										//电角度   NTC_Temp  Motor.E_theta PARK_PCurr.Qs
 //    vofa_data[1] =  ADC_Value[1];												//目标速度  ADC_Sample_Para.PhaseV_Curr  ADC_Sample_Para.PhaseW_Curr
 //    vofa_data[2] =  SVPWM_dq.Ta;												//实际速度  PARK_PCurr.Qs;	 PARK_PCurr.Ds;		  pv->Ta 
-//    vofa_data[3] =  SVPWM_dq.Tb;				            //目标d轴电流 Sensorless.Speed_Max;
+//    vofa_data[3] =  SVPWM_dq.Tb;				            //目标d轴电流 Sensorless.Speed_Max;  ADC_Sample_F_Para.Temperature
 //    vofa_data[4] =  SVPWM_dq.Tc;										//d轴实际电流  Sensorless.theta; PLL_SMO_Para.Angle SVPWM_dq.Ta
 //    vofa_data[5] =  CLARKE_ICurr.Alpha ;             //         Motor.E_theta;					    //目标q轴电流PLL_HFI_Para.Omega_F/PIX2*Velocity_Constant
 //    vofa_data[6] =  CLARKE_ICurr.Beta ;									//q轴实际电流 PLL_HFI_Para.Theta    CLARKE_ICurr.Iv  PLL_SMO_Para.Omega/PIX2*Velocity_Constant

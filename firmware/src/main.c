@@ -333,8 +333,8 @@ int main ( void )
     Init_Over=1 ;
     WDT_Enable( );
     
-    CDAC2_DataWrite(adc_count0);
-    CDAC3_DataWrite(adc_count1);
+//    CDAC2_DataWrite(adc_count0);
+//    CDAC3_DataWrite(adc_count1);
     
     volatile static  uint8_t sample_number = 0 ;
     while ( true )
@@ -357,12 +357,11 @@ int main ( void )
         }  
       
 
-        {
+//        {
             
-
 //                     CDAC3_DataWrite(4095);   //A8
 //                     CDAC2_DataWrite(2048);   //c10
-        }
+//        }
 
 
         
@@ -403,7 +402,7 @@ int main ( void )
         tickNow2 =  getSysTick(); 
 
 //       
-//        #define ictime 40
+//        #define ictime 50
 //        if((int32_t)(tickNow2 - ticOld2) >= ictime)  	  //20k=50Œ¢√Î   1ms 20¥Œ 
 //        { 	
 //            ticOld2 = tickNow2;	

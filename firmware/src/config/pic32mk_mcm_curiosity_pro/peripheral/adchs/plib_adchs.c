@@ -464,10 +464,10 @@ void ADC_ResultHandler(ADCHS_CHANNEL_NUM channel, uintptr_t context)
     
     if(Motor.M_State==2)
     {
-           UVW_Axis_dq();	
+         UVW_Axis_dq();	
          IF_Start_Control();	
 //         QT_Motor();		
-         FOC_Svpwm_dq();
+//         FOC_Svpwm_dq();
          faultdect++;
 //        if(faultdect>=200)  //10ms
 //        {
@@ -542,11 +542,10 @@ void ADC_Sample_Offset(void)
 void ADC_SAMPLE(void)
 {   
 
-
 	ADC_Sample_Para.PhaseV_Curr = (1.65f - (float)( adc_count1 - ADC_Sample_F_Para.Offset_PhaseV_Curr)/4096*3.3f)*I_Gain;
 	ADC_Sample_Para.PhaseW_Curr = (1.65f - (float)( adc_count0 - ADC_Sample_F_Para.Offset_PhaseW_Curr)/4096*3.3f)*I_Gain;
 
-	ADC_Sample_Para.VBUS = (float)adc_count12/4096*3.3f*Vbus_Gain;  
+	ADC_Sample_Para.VBUS = (float)adc_count12/4096*3.35f*Vbus_Gain;  
 	ADC_Sample_Para.Temperature = (float)adc_count13;
 
 }
@@ -578,8 +577,8 @@ void temp_trans(uint16_t ADC_value, float* temp)
 	uint16_t 	Rt = 0;   													        //NTC??
 	float VR = 0;																	//???
 	
-	VR = (float)ADC_value/4096*3.285f; 												//??????
-	Rt = (3.3f - VR)*NTC_R1/VR;														//??Rt
+	VR = (float)ADC_value/4096*3.35f; 												//??????
+	Rt = (3.35f - VR)*NTC_R1/VR;														//??Rt
 	if((Rt < NTC_R0) && (Rt > NTC_R2))												//?25?~100???
 	{
 		*temp = 1/(1/NTC_T0 + log((float)Rt/NTC_R0)/ NTC_B) - NTC_Ka;			   //????
