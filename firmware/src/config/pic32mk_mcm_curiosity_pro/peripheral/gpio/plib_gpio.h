@@ -143,6 +143,14 @@
 #define GPIO_RA14_Get()               ((PORTA >> 14) & 0x1)
 #define GPIO_RA14_PIN                  GPIO_PIN_RA14
 
+/*** Macros for Tx_x2c pin ***/
+#define Tx_x2c_Get()               ((PORTB >> 9) & 0x1)
+#define Tx_x2c_PIN                  GPIO_PIN_RB9
+
+/*** Macros for RX_x2c pin ***/
+#define RX_x2c_Get()               ((PORTC >> 8) & 0x1)
+#define RX_x2c_PIN                  GPIO_PIN_RC8
+
 
 // *****************************************************************************
 /* GPIO Port

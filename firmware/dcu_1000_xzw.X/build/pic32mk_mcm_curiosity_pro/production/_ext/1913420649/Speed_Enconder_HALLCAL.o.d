@@ -4,6 +4,7 @@ build/pic32mk_mcm_curiosity_pro/production/_ext/1913420649/Speed_Enconder_HALLCA
  ../MotorControl/Motor.h ../MotorControl/PI_Cale.h \
  ../MotorControl/FOC_Control.h \
  ../src/config/pic32mk_mcm_curiosity_pro/definitions.h \
+ ../src/config/pic32mk_mcm_curiosity_pro/X2CCode/X2CScope/inc/X2CScope.h \
  ../src/config/pic32mk_mcm_curiosity_pro/peripheral/icap/plib_icap4.h \
  ../src/config/pic32mk_mcm_curiosity_pro/device.h \
  ../src/config/pic32mk_mcm_curiosity_pro/toolchain_specifics.h \
@@ -25,6 +26,7 @@ build/pic32mk_mcm_curiosity_pro/production/_ext/1913420649/Speed_Enconder_HALLCA
  ../src/config/pic32mk_mcm_curiosity_pro/peripheral/adchs/plib_adchs_common.h \
  ../src/config/pic32mk_mcm_curiosity_pro/peripheral/qei/plib_qei1.h \
  ../src/config/pic32mk_mcm_curiosity_pro/peripheral/qei/plib_qei_common.h \
+ ../src/config/pic32mk_mcm_curiosity_pro/peripheral/uart/plib_uart2.h \
  ../src/config/pic32mk_mcm_curiosity_pro/peripheral/tmr/plib_tmr2.h \
  ../src/config/pic32mk_mcm_curiosity_pro/peripheral/tmr/plib_tmr_common.h \
  ../src/config/pic32mk_mcm_curiosity_pro/peripheral/tmr/plib_tmr3.h \
@@ -48,6 +50,8 @@ build/pic32mk_mcm_curiosity_pro/production/_ext/1913420649/Speed_Enconder_HALLCA
 ../MotorControl/FOC_Control.h:
 
 ../src/config/pic32mk_mcm_curiosity_pro/definitions.h:
+
+../src/config/pic32mk_mcm_curiosity_pro/X2CCode/X2CScope/inc/X2CScope.h:
 
 ../src/config/pic32mk_mcm_curiosity_pro/peripheral/icap/plib_icap4.h:
 
@@ -90,6 +94,8 @@ build/pic32mk_mcm_curiosity_pro/production/_ext/1913420649/Speed_Enconder_HALLCA
 ../src/config/pic32mk_mcm_curiosity_pro/peripheral/qei/plib_qei1.h:
 
 ../src/config/pic32mk_mcm_curiosity_pro/peripheral/qei/plib_qei_common.h:
+
+../src/config/pic32mk_mcm_curiosity_pro/peripheral/uart/plib_uart2.h:
 
 ../src/config/pic32mk_mcm_curiosity_pro/peripheral/tmr/plib_tmr2.h:
 

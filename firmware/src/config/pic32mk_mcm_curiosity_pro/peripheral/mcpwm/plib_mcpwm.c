@@ -50,7 +50,7 @@ MCPWM_CH_OBJECT mcpwmObj[12];
 
 void MCPWM_Initialize (void)
 {
-    #if 1
+    #if 0
     /* PTCON register  */
     /*  SEVTPS  = 0 */
     /*  PCLKDIV = 0 */
@@ -106,12 +106,14 @@ void MCPWM_Initialize (void)
     DTR1 = 20;
     ALTDTR1 = 20;
 
-    /* Trigger Generator */
-    TRGCON1 = 0x7400;
-    TRGCON1bits.STRGSEL = 0x00;     PTCONbits.PTEN =0 ; TRGCON1bits.DTM =0x00;
-    TRGCON1bits.STRGIS= 0x0;           
-    TRGCON1bits.TRGDIV = 0 ;       TRGCON1bits.TRGSEL =1 ;
-    TRIG1 =  2980;
+//    /* Trigger Generator */
+    TRGCON1 = 0x400;
+//    TRGCON1bits.STRGSEL = 0x00;     PTCONbits.PTEN =0 ; TRGCON1bits.DTM =0x00;
+//    TRGCON1bits.STRGIS= 0x0;           
+//    TRGCON1bits.TRGDIV = 0 ;       TRGCON1bits.TRGSEL =1 ;
+
+    
+    TRIG1 =  2900;
     STRIG1 = 0;
     /* leading edge blanking */
     /* LEBCON1 register  */
@@ -124,9 +126,9 @@ void MCPWM_Initialize (void)
     LEBCON1 = 0x0;
     LEBDLY1 = 10;
 
-    /* Enable interrupt */
-    IEC5SET = _IEC5_PWM1IE_MASK;
-    mcpwmObj[0].callback = NULL;
+//    /* Enable interrupt */
+//    IEC5SET = _IEC5_PWM1IE_MASK;
+//    mcpwmObj[0].callback = NULL;
 
      /*********** Channel 2 Configurations **********/
     /* PWMCON1 register  */
@@ -158,22 +160,23 @@ void MCPWM_Initialize (void)
     /*  CLSRC  = 0  */
     IOCON2 = 0x3c000;
 
-    PDC2 = 1000;
+    PDC2 = 0000;
     SDC2 = 0;
     PHASE2 = 0;
 
     /* Dead Time */
-    DTR2 = 20;
-    ALTDTR2 = 20;
+    DTR2 = 10;
+    ALTDTR2 = 10;
 
 //    /* Trigger Generator */
-//    TRGCON2 = 0x7400;
-//    TRGCON2bits.STRGSEL = 0x00;     PTCONbits.PTEN =0 ; TRGCON2bits.DTM =0x00;
-//    TRGCON2bits.STRGIS= 0x0;           
-//    TRGCON2bits.TRGDIV = 0 ;       TRGCON2bits.TRGSEL =1 ;
+    TRGCON2 = 0x400;
+//     TRGCON2 = 0x800 ;
+    TRGCON2bits.STRGSEL = 0x00;     PTCONbits.PTEN =0 ; TRGCON2bits.DTM =0x00;
+    TRGCON2bits.STRGIS= 0x0;           
+    TRGCON2bits.TRGDIV = 1 ;       TRGCON2bits.TRGSEL =2 ;
 //
-//    TRIG2 =  1500;
-//    STRIG2 = 0;
+    TRIG2 = 0;
+    STRIG2 = 0;
     /* leading edge blanking */
     /* LEBCON2 register  */
     /*  CLLEBEN    = false  */
@@ -289,7 +292,198 @@ PTCON = 0x0000;
 
  #endif   
     
-    
+#if 1
+ /* PTCON register  */
+    /*  SEVTPS  = 0 */
+    /*  PCLKDIV = 0 */
+    /*  SEIEN   = false */
+    PTCON = 0x0;
+
+    /* STCON register  */
+    /*  SEVTPS  = 0 */
+    /*  SCLKDIV = 0 */
+    /*  SSEIEN = false */
+    STCON = 0x0;
+
+    PTPER = 3000;
+    STPER = 2000;
+    SEVTCMP = 10;
+    SSEVTCMP = 10;
+
+    /*********** Channel 1 Configurations **********/
+    /* PWMCON1 register  */
+    /*  MTBS   = 0 */
+    /*  PTDIR  =  0 */
+    /*  ECAM   =  1 */
+    /*  DTCP   =  0 */
+    /*  DTC    =  0 */
+    /*  ITB    = 0 */
+    /*  PWMHIEN =  false */
+    /*  PWMLIEN = false */
+    /*  TRGIEN = false */
+    /*  CLIEN = false */
+    /*  FLTIEN = true */
+    PWMCON1 = 0x800400;
+
+    /* IOCON1 register  */
+    /*  SWAP    = 0*/
+    /*  PMOD    = 0*/
+    /*  POLH    = 0*/
+    /*  POLL    = 0*/
+    /*  FLTDAT  = 0b00 */
+    /*  FLTMOD  = 1 */
+    /*  PENH  = 1 */
+    /*  PENL  = 1 */
+    /*  FLTPOL  = 1  */
+    /*  FLTSRC  = 0  */
+    /*  CLDAT  = 0b00 */
+    /*  CLMOD  = 0 */
+    /*  CLPOL  = 0  */
+    /*  CLSRC  = 0  */
+    IOCON1 = 0x3c000;
+
+    PDC1 = 1000;
+    SDC1 = 500;
+    PHASE1 = 0;
+
+    /* Dead Time */
+    DTR1 = 76;
+    ALTDTR1 = 76;
+
+    /* Trigger Generator */
+    TRGCON1 = 0x400;
+    TRIG1 = 1500;
+    STRIG1 = 0;
+
+    /* leading edge blanking */
+    /* LEBCON1 register  */
+    /*  CLLEBEN    = false  */
+    /*  FLTLEBEN   = false */
+    /*  PLF        = 0  */
+    /*  PLR        = 0  */
+    /*  PHF        = 0  */
+    /*  PHR        = 0  */
+    LEBCON1 = 0x0;
+    LEBDLY1 = 10;
+
+//    /* Enable interrupt */
+//    IEC5SET = _IEC5_PWM1IE_MASK;
+//    mcpwmObj[0].callback = NULL;
+
+    /*********** Channel 2 Configurations **********/
+    /* PWMCON2 register  */
+    /*  MTBS   = 0 */
+    /*  PTDIR  =  0 */
+    /*  ECAM   =  1 */
+    /*  DTCP   =  0 */
+    /*  DTC    =  0 */
+    /*  ITB    = 0 */
+    /*  PWMHIEN =  false */
+    /*  PWMLIEN = false */
+    /*  TRGIEN = false */
+    /*  CLIEN = false */
+    /*  FLTIEN = false */
+    PWMCON2 = 0x400;
+
+    /* IOCON2 register  */
+    /*  SWAP    = 0*/
+    /*  PMOD    = 0*/
+    /*  POLH    = 0*/
+    /*  POLL    = 0*/
+    /*  FLTDAT  = 0b00 */
+    /*  FLTMOD  = 1 */
+    /*  PENH  = 1 */
+    /*  PENL  = 1 */
+    /*  FLTPOL  = 1  */
+    /*  FLTSRC  = 0  */
+    /*  CLDAT  = 0b00 */
+    /*  CLMOD  = 0 */
+    /*  CLPOL  = 0  */
+    /*  CLSRC  = 0  */
+    IOCON2 = 0x3c000;
+
+    PDC2 = 1000;
+    SDC2 = 500;
+    PHASE2 = 0;
+
+    /* Dead Time */
+    DTR2 = 76;
+    ALTDTR2 = 76;
+
+    /* Trigger Generator */
+    TRGCON2 = 0x400;
+    TRIG2 = 2990;
+    STRIG2 = 0;
+
+    /* leading edge blanking */
+    /* LEBCON2 register  */
+    /*  CLLEBEN    = false  */
+    /*  FLTLEBEN   = false */
+    /*  PLF        = 0  */
+    /*  PLR        = 0  */
+    /*  PHF        = 0  */
+    /*  PHR        = 0  */
+    LEBCON2 = 0x0;
+    LEBDLY2 = 10;
+
+
+    /*********** Channel 3 Configurations **********/
+    /* PWMCON3 register  */
+    /*  MTBS   = 0 */
+    /*  PTDIR  =  0 */
+    /*  ECAM   =  1 */
+    /*  DTCP   =  0 */
+    /*  DTC    =  0 */
+    /*  ITB    = 0 */
+    /*  PWMHIEN =  false */
+    /*  PWMLIEN = false */
+    /*  TRGIEN = false */
+    /*  CLIEN = false */
+    /*  FLTIEN = false */
+    PWMCON3 = 0x400;
+
+    /* IOCON3 register  */
+    /*  SWAP    = 0*/
+    /*  PMOD    = 0*/
+    /*  POLH    = 0*/
+    /*  POLL    = 0*/
+    /*  FLTDAT  = 0b00 */
+    /*  FLTMOD  = 1 */
+    /*  PENH  = 1 */
+    /*  PENL  = 1 */
+    /*  FLTPOL  = 1  */
+    /*  FLTSRC  = 0  */
+    /*  CLDAT  = 0b00 */
+    /*  CLMOD  = 0 */
+    /*  CLPOL  = 0  */
+    /*  CLSRC  = 0  */
+    IOCON3 = 0x5c000;
+
+    PDC3 = 1000;
+    SDC3 = 500;
+    PHASE3 = 0;
+
+    /* Dead Time */
+    DTR3 = 76;
+    ALTDTR3 = 76;
+
+    /* Trigger Generator */
+    TRGCON3 = 0x400;
+    TRIG3 = 2990;
+    STRIG3 = 0;
+
+    /* leading edge blanking */
+    /* LEBCON3 register  */
+    /*  CLLEBEN    = false  */
+    /*  FLTLEBEN   = false */
+    /*  PLF        = 0  */
+    /*  PLR        = 0  */
+    /*  PHF        = 0  */
+    /*  PHR        = 0  */
+    LEBCON3 = 0x0;
+    LEBDLY3 = 10;
+
+#endif
  
 }
 

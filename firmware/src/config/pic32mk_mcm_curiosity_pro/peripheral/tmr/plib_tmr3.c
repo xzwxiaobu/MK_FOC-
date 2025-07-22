@@ -51,6 +51,7 @@
 
 #include "device.h"
 #include "plib_tmr3.h"
+#include "definitions.h"
 
 static TMR_TIMER_OBJECT tmr3Obj;
  volatile static uint32_t  Time3tick;
@@ -175,8 +176,8 @@ void Time3(uint32_t status, uintptr_t context)  //1ms 1times
 
         Time3tick++  ;
         delay_decrement();
-   
-       
+        
+//          X2CScope_Update() ;
 }
 
 

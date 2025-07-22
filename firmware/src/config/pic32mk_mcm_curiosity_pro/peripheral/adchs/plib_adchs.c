@@ -385,7 +385,8 @@ ADC_Sample_F	ADC_Sample_F_Para   = ADC_Sample_F_DEFAULTS;
 static volatile int faultdect ;
 void ADC_ResultHandler(ADCHS_CHANNEL_NUM channel, uintptr_t context)
 {
-
+//       EVIC_INT_Disable();EVIC_INT_Disable();
+      EVIC_SourceStatusClear(INT_SOURCE_ADC_DATA0);
        uint32_t nBytes = 0;   
        static volatile  uint32_t    Motoradccnt0,   Motoradccnt1  ,Motoradccnt12 , Motoradccnt13,\
                                     Motoradccnt14 ,  Motoradccnt15 ,Motoradccnt11 ,Motoradccnt20, 
@@ -460,14 +461,14 @@ void ADC_ResultHandler(ADCHS_CHANNEL_NUM channel, uintptr_t context)
         
    
      Get_ADC() ;
- 
-    
+              
     if(Motor.M_State==2)
-    {
+    {    
+         (LATAINV= (1<<14)) ;   //测试adc 调度 翻转 
          UVW_Axis_dq();	
-         IF_Start_Control();	
-//         QT_Motor();		
-//         FOC_Svpwm_dq();
+//         IF_Start_Control();	
+         QT_Motor();		
+         FOC_Svpwm_dq();
          faultdect++;
 //        if(faultdect>=200)  //10ms
 //        {
@@ -477,14 +478,19 @@ void ADC_ResultHandler(ADCHS_CHANNEL_NUM channel, uintptr_t context)
    
     }
    
-//    FOC_Control_Selected() ;
+        
+        
+//      uint16_t pwm1cnt ;
+//     pwm1cnt = MCPWM_PrimaryPeriodGet() ;
+////    FOC_Control_Selected() ;
     result_ready = true;
-   (LATAINV= (1<<14)) ;   //测试adc 调度 翻转 
- 
-    PWMCON1bits.TRGIEN =0;
 
+
+        X2CScope_Update() ;
+//    PWMCON1bits.TRGIEN =0;
    
-    
+   
+      EVIC_SourceEnable(INT_SOURCE_ADC_DATA0);
     
 }
 

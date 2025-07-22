@@ -49,6 +49,7 @@
 #include <stddef.h>
 #include <stdbool.h>
 #include <stdio.h>
+#include "X2CCode/X2CScope/inc/X2CScope.h"
 #include "peripheral/icap/plib_icap4.h"
 #include "peripheral/icap/plib_icap5.h"
 #include "peripheral/icap/plib_icap3.h"
@@ -62,6 +63,7 @@
 #include "peripheral/i2c/master/plib_i2c1_master.h"
 #include "peripheral/adchs/plib_adchs.h"
 #include "peripheral/qei/plib_qei1.h"
+#include "peripheral/uart/plib_uart2.h"
 #include "peripheral/tmr/plib_tmr2.h"
 #include "peripheral/tmr/plib_tmr3.h"
 #include "peripheral/mcpwm/plib_mcpwm.h"

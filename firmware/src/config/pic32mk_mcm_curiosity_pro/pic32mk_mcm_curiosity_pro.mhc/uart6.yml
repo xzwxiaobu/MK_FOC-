@@ -101,6 +101,15 @@ children:
       children:
       - type: Dynamic
         attributes: {id: uart6, value: '8'}
+  - type: Boolean
+    attributes: {id: USART_INTERRUPT_MODE}
+    children:
+    - type: Attributes
+      children:
+      - type: String
+        attributes: {id: label}
+        children:
+        - {type: Value, value: '---'}
 - type: Attachments
   children:
   - type: DirectCapability

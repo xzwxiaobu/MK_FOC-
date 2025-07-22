@@ -332,7 +332,7 @@ int main ( void )
     M_STOP(); 
     Init_Over=1 ;
     WDT_Enable( );
-    
+      U2MODESET = _U2MODE_ON_MASK;
 //    CDAC2_DataWrite(adc_count0);
 //    CDAC3_DataWrite(adc_count1);
     
@@ -341,7 +341,7 @@ int main ( void )
     {  
         /* 8192ms  没有喂狗 软件复位 xzw*/
         WDT_Clear();
-        
+        X2CScope_Communicate() ;
         /*500ms   RB0作为主程序的 指示灯 指示主程序mainloop不卡死 */
         static volatile  uint32_t    ticOld;  
         static volatile  uint32_t    tickNow;   static volatile int r_v,g_v, b_v ; 
@@ -353,7 +353,7 @@ int main ( void )
             tickflag=!tickflag ;
             GPIO_RB0_Toggle();
             temp_trans(ADC_Sample_F_Para.Temperature, &NTC_Temp);		
-              
+ 
         }  
       
 
@@ -406,7 +406,7 @@ int main ( void )
 //        if((int32_t)(tickNow2 - ticOld2) >= ictime)  	  //20k=50微秒   1ms 20次 
 //        { 	
 //            ticOld2 = tickNow2;	
-            XzwVfGet(); //??????????
+//            XzwVfGet(); //??????????
 
 //        }    
 
@@ -480,7 +480,7 @@ int main ( void )
     
         
 //        IIC1_HANDLE();
-          
+;
           
     }         
        

@@ -64,7 +64,7 @@ void EVIC_Initialize( void )
     IPC26SET = 0x40000 | 0x20000;  /* ADC_DATA0:  Priority 1 / Subpriority 2 */
 //    IPC26SET = 0x4000000 | 0x2000000;  /* ADC_DATA1:  Priority 1 / Subpriority 2 */
 //    IPC43SET = 0x400 | 0x200;  /* PWM1:  Priority 1 / Subpriority 2 */
-    
+//    
     IPC41SET = 0x4 | 0x0;  /* UART6_FAULT:  Priority 1 / Subpriority 0 */
     IPC41SET = 0x400 | 0x0;  /* UART6_RX:  Priority 1 / Subpriority 0 */
     IPC41SET = 0x40000 | 0x0;  /* UART6_TX:  Priority 1 / Subpriority 0 */

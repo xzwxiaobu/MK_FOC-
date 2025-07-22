@@ -186,6 +186,8 @@ void SYS_Initialize ( void* data )
 
     QEI1_Initialize();
 
+	UART2_Initialize();
+
     TMR2_Initialize();
 
     TMR3_Initialize();
@@ -200,9 +202,10 @@ void SYS_Initialize ( void* data )
     
     CDAC2_Initialize();
     CDAC3_Initialize(); 
-    
+ 
 	UART6_Initialize();
 
+      X2CScope_Init();
 //    I2C1_Initialize();
     
 //    ICAP3_Initialize ();

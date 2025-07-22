@@ -220,13 +220,20 @@ void SVPWM_Cale(M_SVPWM	pv)
         wn= (uint16_t)((Limit_Sat(pv->Tc, 0.5f, -0.5f)+ 0.5f)* MCPWM_Period);  //  3000
         
         
-
-        
+//
+//        
         MCPWM_ChannelPrimaryDutySet(MCPWM_CH_1, un);          //b15  1L ??? down       B14  1h  ??? up adc    mk ?act +- inv?
         MCPWM_ChannelPrimaryDutySet(MCPWM_CH_2, vn);         // b13  2L                B12  2h
         MCPWM_ChannelPrimaryDutySet(MCPWM_CH_3, wn); 	    //  B11  3L                b10  3H
 		 
 
+        
+//        MCPWM_ChannelPrimaryDutySet(MCPWM_CH_1, 1500);          //b15  1L ??? down       B14  1h  ??? up adc    mk ?act +- inv?
+//        MCPWM_ChannelPrimaryDutySet(MCPWM_CH_2, 1500);         // b13  2L                B12  2h
+//        MCPWM_ChannelPrimaryDutySet(MCPWM_CH_3, 1500); 	    //  B11  3L                b10  3H 
+        
+        
+        
 //		pv->u1=TIM1->CCR1*ADC_Sample_F_Para.VBUS;
 //  	pv->u2=TIM1->CCR2*ADC_Sample_F_Para.VBUS;	
 //	    pv->u3=TIM1->CCR3*ADC_Sample_F_Para.VBUS;
