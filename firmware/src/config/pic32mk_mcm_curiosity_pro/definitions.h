@@ -48,7 +48,6 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <stdbool.h>
-#include <stdio.h>
 #include "X2CCode/X2CScope/inc/X2CScope.h"
 #include "peripheral/icap/plib_icap4.h"
 #include "peripheral/icap/plib_icap5.h"

@@ -79,17 +79,17 @@ void ADCHS_Initialize()
 //     ADCCON1bits.STRGSRC
 
 
-    ADCTRG1 = 0xa0a;         // adc0?adc1 ??? 
+    ADCTRG1 = 0xb0b;         // adc0?adc1 ??? 
     ADCTRG2 = 0x0;    
-    ADCTRG3 = 0xa000000;       // an11   c11
-    ADCTRG4 = 0xa0a0a0a;       // an15  e12- 15
+    ADCTRG3 = 0xb000000;       // an11   c11
+    ADCTRG4 = 0xb0b0b0b;       // an15  e12- 15
     
 //    ADCTRG3bits.TRGSRC11 = 0b01010;       // an11 ac11 
 //    ADCTRG4bits.TRGSRC12 = 0b01010;     
 //    ADCTRG4bits.TRGSRC13 = 0b01010; 
 //    ADCTRG4bits.TRGSRC14 = 0b01010; 
-    ADCTRG5 = 0xa00000a;   //  an16  g9    an 19   g6
-    ADCTRG6 = 0xa0a;     //   an20   e9      an21  e8
+    ADCTRG5 = 0xb00000b;   //  an16  g9    an 19   g6
+    ADCTRG6 = 0xb0b;     //   an20   e9      an21  e8
     ADCTRG7 = 0x0; 
 
     ADCTRGSNS = 0x0;
@@ -464,7 +464,8 @@ void ADC_ResultHandler(ADCHS_CHANNEL_NUM channel, uintptr_t context)
               
     if(Motor.M_State==2)
     {    
-         (LATAINV= (1<<14)) ;   //测试adc 调度 翻转 
+        GPIO_RA14_Set() ;  
+//         (LATAINV= (1<<14)) ;   //测试adc 调度 翻转 
          UVW_Axis_dq();	
 //         IF_Start_Control();	
          QT_Motor();		
@@ -475,7 +476,7 @@ void ADC_ResultHandler(ADCHS_CHANNEL_NUM channel, uintptr_t context)
 //           faultdect =0 ;
 //           Fault_Detection();	
 //        }
-   
+         GPIO_RA14_Clear()     ;
     }
    
         

@@ -46,11 +46,7 @@ void XzwVfsend(void)
                         RGB_ledControl(step) ;
                      //                       GPIO_RA14_Toggle();
                      }
-                    
-                    
-                    
-                    
-         
+    
               }
               else
               {
@@ -63,28 +59,28 @@ void XzwVfsend(void)
 
 }
 
-
+extern volatile   u16 	IF_Angle ;
 #define VOFAnum   10
 void XzwVfGet( void)
 {
-//        static volatile float pi =0 ;
-//        static float the,this,that;
-//        
-//        if(pi>=2*M_PI)
-//        {
-//            pi=0;
-//        
-//        }
-//        else
-//        {
-//            pi+=0.3;
-//        }
-//        
-//        
-//        
-//        the = sinf(pi) ;
-//        this = cosf(pi) ;
-//        that =sinf(pi+M_PI);
+        static volatile float pi =0 ;
+        static float the,this,that;
+        
+        if(pi>=2*M_PI)
+        {
+            pi=0;
+        
+        }
+        else
+        {
+            pi+=0.3;
+        }
+        
+        
+        
+        the = sinf(pi) ;
+        this = cosf(pi) ;
+        that =sinf(pi+M_PI);
          static float Wxxx=-10.0f ;
          Wxxx =Wxxx+0.5;
          
@@ -98,17 +94,17 @@ void XzwVfGet( void)
         
         static int errcnt=0 ;
         static float num[10]={0};
-        num[0]= ADC_Sample_Para.PhaseV_Curr ;
-        num[1]= ADC_Sample_Para.PhaseW_Curr ;
+        num[0]=PDC1 ; // ADC_Sample_Para.PhaseV_Curr ;
+        num[1]=PDC2 ;//ADC_Sample_Para.PhaseW_Curr ;
 //        num[2]= adc_count1 ;
 //        num[3]= adc_count0 ;
 //        num[2]= CLARKE_ICurr.Iu ;
 //        num[3]=adc_count14 ;
 //        num[4]= ADC_Sample_F_Para.VBUS  ;
         num[5]= NTC_Temp;//NTC_Temp ;
-       num[6]= SVPWM_dq.u3 ; //IF_Theta;
-        num[7]=SVPWM_dq.u1;
-        num[8]=SVPWM_dq.u2 ;
+//        num[6]= IF_Angle; // IF_ANGEL IF_Angle IF_Theta
+        num[7]=SVPWM_dq.Ta;
+        num[8]=SVPWM_dq.Tb ;
 //        num[0]=2*(Sigmoid(Wxxx)-0.5) ; 
         
 //        if(  num[0]<0 ||  num[0]>1)

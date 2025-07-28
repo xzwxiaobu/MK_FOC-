@@ -352,7 +352,7 @@ PTCON = 0x0000;
 
     /* Trigger Generator */
     TRGCON1 = 0x400;
-    TRIG1 = 1500;
+    TRIG1 =2990;
     STRIG1 = 0;
 
     /* leading edge blanking */

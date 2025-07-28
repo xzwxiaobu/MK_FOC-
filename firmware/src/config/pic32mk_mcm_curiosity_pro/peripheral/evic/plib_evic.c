@@ -58,16 +58,14 @@ void EVIC_Initialize( void )
     IPC3SET = 0x40000 | 0x0;  /* TIMER_3:  Priority 1 / Subpriority 0 */
 //    IPC4SET = 0x4 | 0x0;  /* INPUT_CAPTURE_3:  Priority 1 / Subpriority 0 */
 //    IPC5SET = 0x400 | 0x0;  /* INPUT_CAPTURE_4:  Priority 1 / Subpriority 0 */
-//    IPC6SET = 0x40000 | 0x0;  /* INPUT_CAPTURE_5:  Priority 1 / Subpriority 0 */
-//    IPC10SET = 0x400 | 0x0;  /* I2C1_BUS:  Priority 1 / Subpriority 0 */
+//    IPC6SET = 0x40000 | 0x0;  /* INPUT_CAPTURE_5:  Priority 1 / Subpriority 0 *///    IPC10SET = 0x400 | 0x0;  /* I2C1_BUS:  Priority 1 / Subpriority 0 */
 //    IPC10SET = 0x4000000 | 0x0;  /* I2C1_MASTER:  Priority 1 / Subpriority 0 */
-    IPC26SET = 0x40000 | 0x20000;  /* ADC_DATA0:  Priority 1 / Subpriority 2 */
-//    IPC26SET = 0x4000000 | 0x2000000;  /* ADC_DATA1:  Priority 1 / Subpriority 2 */
-//    IPC43SET = 0x400 | 0x200;  /* PWM1:  Priority 1 / Subpriority 2 */
-//    
+    IPC26SET = 0x80000 | 0x0;  /* ADC_DATA0:  Priority 2 / Subpriority 0 */
     IPC41SET = 0x4 | 0x0;  /* UART6_FAULT:  Priority 1 / Subpriority 0 */
     IPC41SET = 0x400 | 0x0;  /* UART6_RX:  Priority 1 / Subpriority 0 */
     IPC41SET = 0x40000 | 0x0;  /* UART6_TX:  Priority 1 / Subpriority 0 */
+//    IPC43SET = 0x400 | 0x200;  /* PWM1:  Priority 1 / Subpriority 2 */
+
 
 
     /* Configure Shadow Register Set */

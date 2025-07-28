@@ -99,7 +99,6 @@
         <itemPath>../src/config/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_pro.mhc/project.yml</itemPath>
         <itemPath>../src/config/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_pro.mhc/qei1.yml</itemPath>
         <itemPath>../src/config/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_pro.mhc/settings.yml</itemPath>
-        <itemPath>../src/config/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_pro.mhc/stdio.yml</itemPath>
         <itemPath>../src/config/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_pro.mhc/tmr2.yml</itemPath>
         <itemPath>../src/config/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_pro.mhc/tmr3.yml</itemPath>
         <itemPath>../src/config/pic32mk_mcm_curiosity_pro/pic32mk_mcm_curiosity_pro.mhc/uart2.yml</itemPath>

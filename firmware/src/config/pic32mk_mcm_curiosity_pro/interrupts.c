@@ -106,7 +106,7 @@ void __ISR(_I2C1_MASTER_VECTOR, ipl1SRS) I2C1_MASTER_Handler (void)
     I2C1_MASTER_InterruptHandler();
 }
 
-void __ISR(_ADC_DATA0_VECTOR, ipl1SRS) ADC_DATA0_Handler (void)
+void __ISR(_ADC_DATA0_VECTOR, ipl2SRS) ADC_DATA0_Handler (void)
 {
     ADC_DATA0_InterruptHandler();
 }

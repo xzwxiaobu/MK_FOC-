@@ -212,17 +212,18 @@ void M_RUN(void)
       MCPWM_Start();
 }
 
-//强制拖动
-void QT_Motor(void)
+//强制拖动  执行14- 15微秒 
+void QT_Motor(void)  
 {
     IF_Frq ++;
     if(IF_Frq == QT_Frq)					//强拖频率50微秒 *50=2500  2.5ms
     {
         IF_Frq = 0;
         IPARK_PVdq.Alpha = ualpha_tab[IF_Angle];
-//        IPARK_PVdq.Alpha=2* IPARK_PVdq.Alpha;
-        IPARK_PVdq.Beta = ubeta_tab[IF_Angle];
-//          IPARK_PVdq.Beta=2*  IPARK_PVdq.Beta ;
+        IPARK_PVdq.Beta  = ubeta_tab [IF_Angle];
+//        IPARK_PVdq.Alpha  =0.5*cosf(PIX2/360*IF_Angle);
+//        IPARK_PVdq.Beta = 0.5*sinf(PIX2/360*IF_Angle) ;
+
         IF_Angle ++;
         if(IF_Angle > 359)
             IF_Angle = 0;
@@ -293,7 +294,7 @@ void IF_Start_Control(void)
 		
     pi_id.Ref = 0.0f;														      //id=0，d轴电流闭环，力矩大
     pi_id.Fbk = PARK_PCurr.Ds;
-    PI_Controller((M_PI_Control)&pi_id);									     //Id轴闭环
+//    PI_Controller((M_PI_Control)&pi_id);									     //Id轴闭环
 //	pi_id.OutF = pi_id.OutF*LPF_I_RUN_B + pi_id.Out*LPF_I_RUN_A;
 		
 	float maxVsMag_V = MaxVsMagPu * ADC_Sample_F_Para.VBUS;
@@ -304,7 +305,7 @@ void IF_Start_Control(void)
     pi_iq.Umin =   -outMax_V;
     pi_iq.Ref =    IF_Current;																//Iq的设定和电机的额定转矩有关，IF启动一般Iq选择比额定转矩下的Iq略大
     pi_iq.Fbk=    PARK_PCurr.Qs;
-    PI_Controller((M_PI_Control)&pi_iq);									//Iq轴闭环
+//    PI_Controller((M_PI_Control)&pi_iq);									//Iq轴闭环
 //	pi_iq.OutF = pi_iq.OutF*LPF_I_RUN_B + pi_iq.Out*LPF_I_RUN_A;
 
     IPARK_PVdq.Theta = IF_Theta;

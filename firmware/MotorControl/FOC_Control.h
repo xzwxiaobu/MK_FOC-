@@ -61,6 +61,7 @@ extern uint8_t 					Fault_Code;			//¹ÊÕÏ´úÂë
 extern uint8_t 					Cal_time;
 extern volatile uint8_t	     	Speed_Cal_time;
 extern volatile float 		   IF_Theta;
+
 //extern bool 				    Observe_Switch_flag;
 extern volatile  bool                  Init_Over  ;
 
